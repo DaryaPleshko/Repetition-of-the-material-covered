@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    color: #717171;
+
+    max-width: 1360px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 17px;
+}
+
+header nav p {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+header nav p:hover {
+    text-decoration: underline;
+    color: #4CAF4F;
+}
+
+header nav button,
+main .hero-section .hero-content div button,
+main .achievements .insights button,
+main .achievements .footprint button,
+main .marketing .call-to-action button {
+    background-color: #4CAF4F;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header nav button:hover,
+main .hero-section .hero-content div button:hover,
+main .achievements .insights button:hover,
+main .achievements .footprint button:hover,
+main .marketing .call-to-action button:hover {
+    background-color: #388E3B;
+}
+
+main .hero-section {
+    background-color: #F5F7FA;
+    padding: 60px 100px 15px 100px;
+}
+
+main .hero-section .hero-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .hero-section .hero-content div h1 {
+    font-size: 45px;
+    color: #4D4D4D;
+    margin-top: 50px;
+}
+
+main .hero-section .hero-content div span {
+    color: #4CAF4F;
+}
+
+main .hero-section .hero-content div p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 13px;
+    margin: 10px 0 20px 0;
+}
+
+main .hero-section .hero-content .image-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main .hero-section .dots-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+main .about {
+    padding: 0 40px;
+}
+
+main .about h3 {
+    font-size: 25px;
+    text-align: center;
+    color: #4D4D4D;
+    margin-top: 25px;
+}
+
+main .about p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 0px 20px 0px;
+}
+
+main .about .clients {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .about .clients img:hover {
+    transform: scale(1.2);
+}
+
+main .about .blok-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+    gap: 5%;
+}
+
+main .about .blok-info div {
+    box-shadow: 0px 1.39px 2.78px 0px #ABBED133;
+    border-radius: 6px;
+    width: 35%;
+    height: 20%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .about .blok-info div:hover {
+    box-shadow: 0px 22.39px 18.78px 0px #ABBED133;
+    transform: scale(1.1);
+}
+
+main .about .blok-info div h4 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    color: #4D4D4D;
+    padding-top: 11px;
+    text-align: center;
+}
+
+main .achievements .insights,
+main .achievements .footprint {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6%;
+    padding: 0 10%;
+}
+
+main .achievements .insights h4,
+main .achievements .footprint h4 {
+    color: #4D4D4D;
+    font-size: 25px;
+    padding-top: 2%;
+}
+
+main .achievements .insights p,
+main .achievements .footprint p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    margin: 10px 0 20px 0;
+}
+
+main .achievements .footprint img {
+    width: 27%;
+    height: 30%;
+    margin-bottom: 50px;
+}
+
+main .achievements .revival {
+    background-color: #F5F7FA;
+    padding: 6% 10%;
+}
+
+main .achievements .revival h4 {
+    color: #4D4D4D;
+    font-size: 25px;
+}
+
+main .achievements span {
+    color: #4CAF4F;
+}
+
+main .achievements .revival p {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 13px;
+    color: #717171;
+    margin-top: 10px;
+}
+
+main .achievements .revival {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .achievements .revival .result {
+    display: flex;
+    gap: 15%;
+}
+
+main .achievements .revival .examples {
+    display: flex;
+    gap: 10%;
+}
+
+main .achievements .revival .examples:nth-child(1),
+main .achievements .revival .examples:nth-child(3) {
+    padding-bottom: 3%;
+}
+
+main .achievements .review {
+    background-color: #F5F7FA;
+    padding: 2% 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .achievements .review p {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 17px;
+    color: #717171;
+}
+
+main .achievements .review h5 {
+    color: #4CAF4F;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+main .achievements .review h6 {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    color: #89939E;
+    padding-top: 5px;
+}
+
+main .achievements .review .customers {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+}
+
+main .achievements .review .customers div img {
+    width: 10%;
+    height: 10%;
+}
+
+main .achievements .review .customers div {
+    position: relative;
+    top: 8px;
+}
+
+main .achievements .review .customers img:hover {
+    transform: scale(1.2);
+}
+
+main .achievements .review .customers div:hover {
+    text-decoration: underline;
+    color: #4CAF4F;
+}
+
+main .marketing .blog-posts {
+    padding: 0 10%;
+}
+
+main .marketing .blog-posts .blog-of-marketing {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .marketing .blog-posts .blog-of-marketing .blog-info {
+    background-color: #F5F7FA;
+    box-shadow: 0px 25px 30px 20px #ABBED133;
+    border-radius: 6px;
+    position: relative;
+    bottom: 70px;
+    left: 20px;
+    width: 220px;
+    height: 120px;
+}
+
+main .marketing .blog-posts .blog-of-marketing .blog-info:hover {
+    box-shadow: 0px 25px 30px 0px #abbed190;
+    transform: scale(1.1);
+}
+
+main .marketing .blog-posts .blog-of-marketing .blog-info img {
+    width: 1.8%;
+    height: 1%;
+    position: relative;
+    top: 5px;
+}
+
+main .marketing .blog-posts .blog-of-marketing .blog-info div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+main .marketing .blog-posts .blog-of-marketing .blog-info span {
+    color: #4CAF4F;
+    font-size: 15px;
+}
+
+main .marketing .blog-posts h3 {
+    font-size: 25px;
+    text-align: center;
+    color: #4D4D4D;
+    padding-top: 20px;
+}
+
+main .marketing .blog-posts p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 0px 20px 0px;
+}
+
+main .marketing .call-to-action {
+    background-color: #F5F7FA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .marketing .call-to-action h1 {
+    font-size: 45px;
+    color: #263238;
+    padding: 25px 0px;
+    text-align: center;
+}
+
+main .marketing .call-to-action button {
+    margin-bottom: 25px;
+}
+
+footer {
+    background-color: #263238;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+}
+
+footer .all-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+footer img:first-child {
+    width: 133px;
+    height: 22px;
+    padding-bottom: 15px;
+}
+
+footer img:last-child {
+    width: 165px;
+    height: 33px;
+    padding-top: 40px;
+    position: relative;
+    right: 8px;
+}
+
+footer p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    color: #F5F7FA;
+    padding-top: 10px;
+}
+
+footer p:hover {
+    text-decoration: underline;
+}
+
+footer h6 {
+    font-size: 20px;
+    color: #FFFFFF;
+    padding-bottom: 18px;
+}
+
+footer input {
+    color: #0e0e0e;
+    background-color: #D9D9D9;
+    width: 190px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    padding-left: 8px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    main .hero-section {
+        padding: 40px 20px;
+    }
+
+    main .hero-section .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    main .hero-section .hero-content div h1 {
+        font-size: 30px;
+    }
+
+    main .hero-section .hero-content div p {
+        font-size: 15px;
+        margin: 2% auto;
+    }
+
+    main .hero-section .hero-content .image-content {
+        display: flex;
+        justify-content: center;
+    }
+
+    main .hero-section .hero-content img {
+        max-width: 50%;
+    }
+
+    main .about,
+    main .about .blok-info,
+    main .achievements .insights,
+    main .achievements .footprint {
+        padding: 15px 30px;
+    }
+
+    main .about .blok-info div h4 {
+        font-size: 10px;
+        font-weight: 500;
+        font-style: Regular;
+    }
+
+    main .about .blok-info div p,
+    header nav p,
+    footer .logo {
+        display: none;
+    }
+
+    main .achievements .insights h4,
+    main .achievements .footprint h4 {
+        font-size: 18px;
+    }
+
+    main .achievements .insights button,
+    main .achievements .footprint button,
+    main .marketing .call-to-action button,
+    header nav button {
+        padding: 10px 15px;
+    }
+
+    main .achievements .insights img,
+    main .achievements .footprint img {
+        width: 50%;
+        height: 50%;
+    }
+
+    main .achievements .revival {
+        padding: 8%;
+    }
+
+    main .achievements .revival h4,
+    main .achievements .review h5 {
+        font-size: 12px;
+    }
+
+    main .achievements .revival .result .examples p {
+        font-size: 8px;
+    }
+
+    main .achievements .revival .result {
+        gap: 15%;
+    }
+
+    main .achievements .revival .examples {
+        gap: 5%;
+    }
+
+    main .achievements .revival .examples img {
+        width: 30%;
+        height: 30%;
+    }
+
+    main .achievements .review {
+        padding: 5%;
+    }
+
+    main .achievements .review img {
+        width: 50%;
+        height: 50%;
+    }
+
+    main .achievements .review p {
+        font-size: 15px;
+    }
+
+    main .achievements .review .customers {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main .achievements .review .customers img {
+        width: 20px;
+        height: 20px;
+    }
+
+    main .marketing .blog-posts {
+        padding: 0 20px;
+    }
+    
+    main .marketing .blog-posts .blog-of-marketing {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main .marketing .blog-posts .blog-of-marketing .blog-info {
+        width: 220px;
+        height: 120px;
+    }
+
+    main .marketing .call-to-action h1 {
+        font-size: 25px;
+    }
+
+    footer {
+        padding: 5%;
+    }
+
+    footer .all-info {
+        gap: 20px;
+    }
+
+    footer input {
+        width: 170px;
+        height: 35px;
+    }
+}

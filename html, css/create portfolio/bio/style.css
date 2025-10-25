@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 30px 130px;
+    background-color: rgb(230, 230, 230);
+    color: #181717;
+    font-family: DM Sans;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 22px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 50px;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.bio {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.bio article h1 {
+    font-size: 60px;
+}
+
+.bio article p {
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+aside {
+    background-color: #606060;
+    width: 450px;
+    height: 400px;
+}
+
+.skills div {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: 100px;
+}
+
+.skills .name {
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+.skills .description {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+}
+
+.skills hr {
+    margin: 50px 0 80px 0;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    width: 95%;
+}
+
+.questions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.questions div {
+    display: flex;
+    align-items: center;
+}
+
+.questions p {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.questions .arrow-right {
+    background-image: url('../images/arrow-right.png');
+    width: 24px;
+    height: 20px;
+    margin-left: 35px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+footer .name {
+    color: #2429AF;
+}
+
+footer nav {
+    display: flex;
+    gap: 30px;
+}

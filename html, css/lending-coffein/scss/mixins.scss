@@ -1,0 +1,12 @@
+
+@mixin font-second($a) {
+    font-weight: 400;
+    font-size: $a;
+    font-family: 'Clicker Script';
+}
+
+@mixin font-primary($a,$b) {
+    font-size: $a;
+    font-weight: $b;
+    font-family: 'Playfair Display';
+}

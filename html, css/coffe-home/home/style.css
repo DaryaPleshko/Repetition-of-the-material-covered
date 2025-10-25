@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E1D4C9;
+    font-family: Inter;
+    margin: 20px 40px;
+    font-weight: 600;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header p:hover {
+    text-decoration: underline;
+}
+
+header .logo {
+    background-image: url('../assets/logo.svg');
+    width: 100px;
+    height: 60px;
+}
+
+header p {
+    font-size: 16px;
+    color: #403F3D;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+header .coffe-cup {
+    background-image: url('../assets/coffee-cup.svg');
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 2.5px;
+}
+
+header div:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+main .intro {
+    background-image: url('../assets/main.jpg');
+    width: 100%;
+    height: 650px;
+    border-radius: 40px;
+    margin-top: 20px;
+}
+
+main .intro div {
+    padding: 100px 0 0 100px;
+}
+
+main .intro span {
+    font-style: Italic;
+    font-size: 72px;
+    color: #B0907A;
+}
+
+main .intro h1 {
+    font-size: 72px;
+    color: #E1D4C9;
+}
+
+main .intro p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #E1D4C9;
+    padding-top: 40px;
+}
+
+main .intro button {
+    background-color: #E1D4C9;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    width: 200px;
+    height: 65px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+main .intro button:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
+    position: relative;
+    text-decoration: underline;
+}
+
+main .choice {
+    margin-top: 100px;
+}
+
+main .choice h1 {
+    color: #403F3D;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+}
+
+main .choice span {
+    color: #B0907A;
+    font-style: italic;
+}
+
+main .coffee-carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+main .arrow-left {
+    background-image: url('../assets/left-arrow.svg');
+    width: 60px;
+    height: 60px;
+}
+
+main .arrow-left:hover {
+    background-image: url('../assets/arrow-hover.svg');
+    transform: scaleX(-1);
+}
+
+main .coffee {
+    background-image: url('../assets/coffee.svg');
+    width: 480px;
+    height: 480px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main .arrow-right {
+    background-image: url('../assets/right.svg');
+    width: 60px;
+    height: 60px;
+}
+
+main .arrow-right:hover {
+    background-image: url('../assets/arrow-hover.svg');
+}
+
+main .description {
+    text-align: center;
+}
+
+main .description h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+main .description p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 16px;
+}
+
+main .description .swipe {
+    background-image: url('../assets/swipe.svg');
+    width: 144px;
+    height: 4px;
+    display: block;
+    margin: 40px auto 0 auto;
+}
+
+main .nook {
+    margin-top: 100px;
+}
+
+main .nook h2,
+main .download h3 {
+    color: #403F3D;
+    font-size: 65px;
+    font-weight: 600;
+}
+
+main .nook span,
+main .download span {
+    color: #B0907A;
+    font-style: italic;
+}
+
+main .nook .pic {
+    display: flex;
+    margin-top: 40px;
+}
+
+main .nook .pic img:last-child {
+    padding-top: 35px;
+}
+
+main .download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .download p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+main .download div img {
+    margin-top: 40px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #665F55;
+    border-radius: 40px;
+    padding: 100px 0 100px 0;
+}
+
+footer h3 {
+    font-size: 60px;
+    color: #E1D4C9;
+}
+
+footer span {
+    font-style: Italic;
+    color: #B0907A;
+}
+
+footer img {
+    margin-top: 40px;
+}
+
+footer p {
+    font-style: Semi Bold;
+    font-size: 24px;
+    color: #E1D4C9;
+}
+
+footer .contact div{ 
+    display: flex;
+    align-items: center;
+}
+
+footer .contact img{
+    position: relative;
+    bottom: 20px;
+    right: 5px;
+}
+
+footer .contact p {
+    font-style: Semi Bold;
+    font-size: 16px;
+    color: #E1D4C9;
+}

@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 30px 130px;
+    background-color: rgb(230, 230, 230);
+    color: #181717;
+    font-family: DM Sans;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 22px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 50px;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+main .preview {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+main h1 {
+    font-size: 50px;
+}
+
+main .arrow {
+    background-image: url('../images/arrow.png');
+    width: 33px;
+    height: 39px;
+    margin-top: 80px;
+}
+
+main .description {
+    font-weight: 400;
+    font-size: 28px;
+    color: #606060;
+    padding-top: 45px;
+}
+
+main .information {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.information div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.information aside {
+    background-color: #606060;
+    width: 640px;
+    height: 365px;
+}
+
+.information .card {
+    font-size: 24px;
+}
+
+.information .project-description {
+    font-weight: 400;
+    font-style: Regular;
+    padding-top: 10px;
+}
+
+.information .tech-list {
+    font-weight: 400;
+    font-style: Regular;
+    color: #606060;
+    padding-top: 50px;
+}
+
+.information h4 {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    padding-top: 75px;
+}
+
+.information hr {
+    margin: 80px 0 80px 0;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    width: 95%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+footer .name {
+    color: #2429AF;
+}
+
+footer nav{
+    display: flex;
+    gap: 30px;
+}
