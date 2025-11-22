@@ -116,18 +116,100 @@ button_l11.addEventListener('click', () => {
 // Вывести в строчку все вводимые значения через инпут в виде массива. Добавить
 // проверку, что поле не пустое
 const button_l13 = document.querySelector('.button_l13');
-const input_l13 = document.querySelector('.input_l13'); 
+const input_l13 = document.querySelector('.input_l13');
 const p = document.querySelector('.paragraf');
 let arrayInput = [];
 button_l13.addEventListener('click', () => {
-    const value = input_l13.value.trim(); 
+    const value = input_l13.value.trim();
     if (value) {
         arrayInput.push(value);
-        p.innerHTML = `Массив: [${arrayInput.join(', ')}]`; 
+        p.innerHTML = `Массив: [${arrayInput.join(', ')}]`;
         input_l13.value = '';
     } else {
         alert('Поле не должно быть пустым!');
     }
-    
+
 });
 p.innerHTML = arrayInput;
+
+// По нажатию на кнопку заменяйте <h1> с "Добро пожаловать" на "Приятно вас видеть".
+const button_l14 = document.getElementById('button_l14');
+button_l14.addEventListener('click', () => {
+    const h1 = document.getElementById('h1l14');
+    h1.textContent.trim() === 'Добро пожаловать' ? h1.textContent = 'Приятно вас видеть' : h1.textContent = 'Добро пожаловать';
+});
+
+// Есть кнопка — по клику показывайте <div> с тремя абзацами текста.
+const button_l15 = document.getElementById('button_l15');
+const divP = document.getElementById('wrap');
+button_l15.addEventListener('click', () => {
+    const text1 = document.createElement('p');
+    const text2 = document.createElement('p');
+    const text3 = document.createElement('p');
+    text1.textContent = 'Первый абзац текста. Здесь может быть любая информация.';
+    text2.textContent = 'Второй абзац текста. Еще немного содержимого для примера.';
+    text3.textContent = 'Третий абзац текста. Завершающая часть текстового контента.';
+    divP.appendChild(text1);
+    divP.appendChild(text2);
+    divP.appendChild(text3);
+    button_l15.style.display = 'none';
+});
+
+// Пользователь вводит текст в input и нажимает кнопку — добавляйте этот комментарий в
+// список ul расположенный ниже. Дополните задачу кнопкой "Очистить всё", которая удаляет все <li> из списка.
+const button_l16 = document.getElementById('button_l16');
+const button_l18 = document.getElementById('button_l18');
+const ulLi = document.getElementById('ulLi');
+button_l16.addEventListener('click', () => {
+    const input = document.getElementById('inp16');
+    if (input.value.trim() !== '') {
+        const li = document.createElement('li');
+        li.textContent = input.value;
+        ulLi.appendChild(li);
+        input.value = ''
+    }
+});
+button_l18.addEventListener('click', () => {
+    ulLi.innerHTML = '';
+});
+
+// У элемента есть кнопка "Подробнее" — по клику добавляйте абзац с описанием.
+const button_l17 = document.getElementById('button_l17');
+const divInfo = document.getElementById('info');
+let isInfoVisible = false;
+button_l17.addEventListener('click', () => {
+    const paragraf = document.createElement('p');
+    if (!isInfoVisible) {
+        paragraf.textContent = 'новое поколение смартфонов Apple, отличающееся обновленным дизайном, улучшенными характеристиками и новыми функциями. Он оснащен процессором Apple A19, улучшенной камерой с 48-мегапиксельным основным сенсором и поддержкой Wi-Fi 7, а также новым 6,3-дюймовым дисплеем с частотой обновления 120 Гц. '
+        divInfo.appendChild(paragraf);
+        button_l17.textContent = 'Скрыть информацию';
+        isInfoVisible = true;
+    } else {
+        divInfo.innerHTML = '';
+        button_l17.textContent = 'Показать информацию';
+        isInfoVisible = false;
+    }
+});
+
+// На странице есть форма с двумя полями ввода:
+// • первое поле — email
+// • второе поле — пароль
+// • и кнопка "Войти".
+// По клику на кнопку нужно:
+// • проверить, что email написан правильно (с помощью регулярного выражения),
+// • убедиться, что пароль не пустой и содержит не менее 8 символов.
+// Если всё введено верно — выводите сообщение Успешный вход!
+// Если есть ошибка — показывайте соответствующее сообщение об ошибке под формой
+const button_l21 = document.getElementById('button_l21');
+button_l21.addEventListener('click', () => {
+    const email = document.getElementById('emailInp');
+    const pwd = document.getElementById('pwd');
+    try {
+        if (email === '' || pwd === '') throw new Error('Вы ничего не ввели');
+        if (!/^\S+@\S+\.\S+$/.test(email)) throw new Error('Неверный ввод почты');
+        if (pwd.length < 8) throw new Error('Пароль содержит менее 8 символов');
+        alert('Успешный вход!')
+    } catch (error) {
+        alert(error.message);
+    }
+});
