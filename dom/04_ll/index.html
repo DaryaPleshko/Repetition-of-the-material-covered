@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul class="target-list">
+        <li>Первый</li>
+        <li>Второй</li>
+        <li>Третий</li>
+        <li>Четвертый</li>
+    </ul>
+    <div class="target-btn">
+        <button>Первый</button>
+        <button>Второй</button>
+        <button>Третий</button>
+        <button>Четвертый</button>
+    </div>
+    <div class="text-block">
+        <p>Это пример текста, который можно скрывать или показывать с помощью кнопки. Здесь может быть любой контент:
+            статьи, описания, инструкции или другая информация, которую пользователь может захотеть временно скрыть для
+            экономии места на экране.</p>
+        <button class="toggleBtn">Скрыть текст</button>
+    </div>
+
+    <button class="mouseOver">Наведи мышку</button>
+
+    <button class="dbl-click-btn">Нажми дважды</button>
+
+    <div>
+        <input type="text" placeholder="Имя..." class="nameUser">
+        <input type="text" placeholder="Email..." class="emailUser">
+        <input type="text" placeholder="Password..." class="pwdUser">
+        <button class="valid">ВОЙТИ</button>
+    </div>
+    <img src="./assets/images.jpg" class="foto" alt="Изображение">
+    <div>
+        <input type="text" class="inp-palindrom">
+        <button class="btn-palindrom">Проверить</button>
+        <hr>
+        <h4>Результат:</h4>
+        <p class="res-palindrom"></p>
+    </div>
+    <div>
+        <h2>Выберите единицу измерения:</h2>
+        <select class="unitSelector">
+            <option value="">-- Выберите единицу --</option>
+            <option value="inches">Дюймы</option>
+            <option value="yards">Ярды</option>
+            <option value="feet">Футы</option>
+            <option value="miles">Мили</option>
+            <option value="centimeters">Сантиметры</option>
+            <option value="meters">Метры</option>
+            <option value="kilometers">Километры</option>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

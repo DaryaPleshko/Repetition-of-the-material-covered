@@ -1,0 +1,7 @@
+.foto {
+    background: url("./assets/images.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+}
