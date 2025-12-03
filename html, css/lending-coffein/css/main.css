@@ -269,6 +269,7 @@ body {
   font-weight: 400;
   font-family: "Playfair Display";
   padding-top: 80px;
+  max-width: 800px;
 }
 .testimonials .feedback .container .info-people h3 {
   font-size: 32px;
@@ -284,6 +285,11 @@ body {
 .testimonials .feedback .container .info-people img {
   position: relative;
   top: 55px;
+  width: 110px;
+  height: 110px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10%;
 }
 .testimonials .feedback .container .arrow-left,
 .testimonials .feedback .container .arrow-rigth {
