@@ -64,13 +64,13 @@ const findGCDSimple = (num1: number, num2: number) => {
 
     let gcd = 1;
     for (let i = 2; i <= min; i++) {
-        if (num1 % i === 0 && num2 % i === 0)  gcd = i;
+        if (num1 % i === 0 && num2 % i === 0) gcd = i;
     }
-    
+
     return `НОД: ${gcd}`;
 };
-console.log(findGCDSimple(15, 25));  
-console.log(findGCDSimple(14, 28));  
+console.log(findGCDSimple(15, 25));
+console.log(findGCDSimple(14, 28));
 
 // Напишите программу, которая проверяет, начинается ли строка str с гласной буквы. Гласными
 // считаются: a, e, i, o, u. Выведите результат в консоль.
@@ -86,22 +86,22 @@ console.log(isFirstVowel('apple'));
 // Входные: str = "abcabc" → Результат: "Нельзя"
 const canSplitString = (str: string) => {
     if (str.length < 2) return "Нельзя";
-    
+
     for (let i = 1; i < str.length; i++) {
         const leftPart = str.slice(0, i);
         const rightPart = str.slice(i);
-        
+
         const leftUnique = new Set(leftPart);
         const rightUnique = new Set(rightPart);
-        
+
         if (leftUnique.size === rightUnique.size) return `Можно (${leftPart}|${rightPart})`;
     }
-    
+
     return "Нельзя";
 };
 
-console.log(canSplitString("aabbcc")); 
-console.log(canSplitString("abcabc")); 
+console.log(canSplitString("aabbcc"));
+console.log(canSplitString("abcabc"));
 
 // Напишите программу, которая проверяет, можно ли заданное число num представить в виде
 // произведения двух последовательных целых чисел. Если возможно, выведите эти числа, иначе
@@ -111,23 +111,23 @@ console.log(canSplitString("abcabc"));
 const checkConsecutiveProduct = (num: number) => {
     const discriminant = 1 + 4 * num;
     const sqrtDiscriminant = Math.sqrt(discriminant);
-    
+
     if (Number.isInteger(sqrtDiscriminant)) {
         const x1 = (-1 + sqrtDiscriminant) / 2;
         const x2 = (-1 - sqrtDiscriminant) / 2;
-        
+
         const x = Math.max(x1, x2);
-        
-        if (Number.isInteger(x))   return `${x} * ${x + 1} = ${num}`;
+
+        if (Number.isInteger(x)) return `${x} * ${x + 1} = ${num}`;
     }
-    
+
 };
-console.log(checkConsecutiveProduct(20));  
+console.log(checkConsecutiveProduct(20));
 
 // Напишите программу, которая проверяет, можно ли из символов строки str составить палиндром,
 // переставив их. Если возможно, выведите "Можно", иначе "Нельзя".
 // Входные: str = "civic" → Результат: "Можно"
 // Входные: str = "ivicc" → Результат: "Можно"
 // Входные: str = "hello" → Результат: "Нельзя"
-const isPalindrom = (str: string) =>  (str === str.split('').reverse().join('')) ? 'Можно' : 'Нельзя';
+const isPalindrom = (str: string) => (str === str.split('').reverse().join('')) ? 'Можно' : 'Нельзя';
 console.log(isPalindrom('civic'));

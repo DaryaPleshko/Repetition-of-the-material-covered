@@ -38,16 +38,16 @@ console.log(concatenationOfStrings(["apple", "banana", "cherry", "date"]));
 
 // На входе 5 значений. Все эти значения пользователь вводит с клавиатуры и
 // заполняет массив. Необходимо создать массив только из чисел.
-const filterNumbers = (): number[] => {
-    const values: (number | string)[] = [];
-    for (let i = 0; i < 5; i++) {
-        const input = prompt(`Значение ${i + 1}:`) || '';
-        const num = Number(input);
-        values.push(isNaN(num) ? input : num);
-    }
-    return values.filter((el): el is number => typeof el === 'number');
-};
-console.log("Числа:", filterNumbers());
+// const filterNumbers = (): number[] => {
+//     const values: (number | string)[] = [];
+//     for (let i = 0; i < 5; i++) {
+//         const input = prompt(`Значение ${i + 1}:`) || '';
+//         const num = Number(input);
+//         values.push(isNaN(num) ? input : num);
+//     }
+//     return values.filter((el): el is number => typeof el === 'number');
+// };
+// console.log("Числа:", filterNumbers());
 
 // Создайте массив строк и проверьте, есть ли в нем хотя бы одно слово-палиндром.
 const isPalindrom = (array: string[]) => array.some(el => el === el.split('').reverse().join(''));
@@ -96,13 +96,13 @@ console.log(numEvenOrNo([1, 2, 3, 4, 5, 6, 7]));
 // На входе динамичный массив строк. Используя forEach создайте новый массив из
 // элементов, каждое значение которого имеет вид !name
 // [“hschool”, “company”] -> [“!hschool”, “!company”]
-const addExclamation = (arr: string[])=> {
+const addExclamation = (arr: string[]) => {
     const result: string[] = [];
-    arr.forEach((item) =>  result.push('!' + item));
+    arr.forEach((item) => result.push('!' + item));
     return result;
 };
 
-console.log(addExclamation(["hschool", "company"])); 
+console.log(addExclamation(["hschool", "company"]));
 console.log(addExclamation(["hello", "world", "test"]));
 
 // Создайте массив чисел и определите, является ли он строго возрастающей
@@ -114,24 +114,207 @@ const isStrictlyIncreasing = (arr: number[]) => {
     return true;
 };
 
-console.log(isStrictlyIncreasing([1, 2, 3, 4, 5]));      
-console.log(isStrictlyIncreasing([1, 2, 2, 3, 4]));      
+console.log(isStrictlyIncreasing([1, 2, 3, 4, 5]));
+console.log(isStrictlyIncreasing([1, 2, 2, 3, 4]));
 
 // Создайте массив объектов, представляющих книги, и найдите книгу где автор
 // Булгаков (author – одно из полей объекта)
+interface Ibook {
+    id: number,
+    author: string,
+    year: number,
+    name: string
+}
+const searchAuthor = (array: Ibook[]): Ibook[] => array.filter(el => el.author === 'Булгаков');
+console.log(searchAuthor([
+    {
+        id: 1,
+        author: 'Булгаков',
+        year: 1925,
+        name: 'Собачье сердце'
+    },
+    {
+        id: 2,
+        author: 'Толстой',
+        year: 1869,
+        name: 'Война и мир'
+    },
+    {
+        id: 3,
+        author: 'Булгаков',
+        year: 1929,
+        name: 'Мастер и Маргарита'
+    },
+    {
+        id: 4,
+        author: 'Достоевский',
+        year: 1866,
+        name: 'Преступление и наказание'
+    }]));
 
 // Создайте массив объектов, представляющих книги, и отобразите книги где цена
-// каждой > 50 (price – одно из полей объекта)
+// каждой > 350 (price – одно из полей объекта)
+interface IbookPrice {
+    id: number,
+    author: string,
+    year: number,
+    name: string,
+    price: number
+}
+const searchPriceBook = (array: IbookPrice[]): IbookPrice[] => array.filter(el => el.price > 350);
+console.log(searchPriceBook([
+    {
+        id: 1,
+        author: 'Булгаков',
+        year: 1925,
+        name: 'Собачье сердце',
+        price: 250
+    },
+    {
+        id: 2,
+        author: 'Толстой',
+        year: 1869,
+        name: 'Война и мир',
+        price: 450
+    },
+    {
+        id: 3,
+        author: 'Булгаков',
+        year: 1929,
+        name: 'Мастер и Маргарита',
+        price: 525
+    },
+    {
+        id: 4,
+        author: 'Достоевский',
+        year: 1866,
+        name: 'Преступление и наказание',
+        price: 550
+    }]));
 
 // Создайте массив объектов, представляющих книги, и найдите книгу с самым
 // большим количеством страниц (count – одно из полей объекта)
-
-// Напишите программу, которая находит и выводит длину наиболее длинного
-// слова в заданной строке.
+interface IbookLength {
+    id: number,
+    author: string,
+    year: number,
+    name: string,
+    price: number,
+    length: number
+}
+const searchLengthBook = (array: IbookLength[]): IbookLength => array.reduce((maxBook, currentBook) => currentBook.length > maxBook.length ? currentBook : maxBook);
+console.log(searchLengthBook([
+    {
+        id: 1,
+        author: 'Булгаков',
+        year: 1925,
+        name: 'Собачье сердце',
+        price: 250,
+        length: 330
+    },
+    {
+        id: 2,
+        author: 'Толстой',
+        year: 1869,
+        name: 'Война и мир',
+        price: 450,
+        length: 1205
+    },
+    {
+        id: 3,
+        author: 'Булгаков',
+        year: 1929,
+        name: 'Мастер и Маргарита',
+        price: 525,
+        length: 986
+    },
+    {
+        id: 4,
+        author: 'Достоевский',
+        year: 1866,
+        name: 'Преступление и наказание',
+        price: 550,
+        length: 1200
+    }]));
 
 // Создайте массив объектов, представляющих сотрудников, с полями "имя" и
 // "зарплата". Найдите среднюю зарплату всех сотрудников.
+interface Iemployees {
+    name: string,
+    salary: number,
+    profession: string,
+    position: string
+}
+const averageSalary = (array: Iemployees[]): number => array.reduce((sum, el) => el.salary + sum, 0);
+console.log(averageSalary([
+    {
+        name: 'Иван Петров',
+        salary: 85000,
+        profession: 'Разработчик',
+        position: 'Middle'
+    },
+    {
+        name: 'Анна Сидорова',
+        salary: 120000,
+        profession: 'Аналитик',
+        position: 'Senior'
+    },
+    {
+        name: 'Сергей Иванов',
+        salary: 55000,
+        profession: 'Тестировщик',
+        position: 'Junior'
+    },
+    {
+        name: 'Мария Козлова',
+        salary: 95000,
+        profession: 'Дизайнер',
+        position: 'Middle'
+    },
+    {
+        name: 'Алексей Смирнов',
+        salary: 110000,
+        profession: 'Менеджер проектов',
+        position: 'Senior'
+    }
+]));
 
 // Дан массив объектов с полями "название", "цена" и "количество". Найдите
 // суммарную стоимостью всех товаров учитывая количество каждого.
 // Итог = цена_1_товара * кол-во_1_товара + цена_2_товара * кол-во_2_товара + ...
+interface Ishop {
+    product: string,
+    price: number,
+    quantity: number
+}
+const shopSumProduct = (array: Ishop[]): number => {
+return array.reduce((total, item) => total + (item.price * item.quantity), 0);
+}
+console.log(shopSumProduct([
+    {
+        product: 'Хлеб',
+        price: 50,
+        quantity: 10
+    },
+    {
+        product: 'Молоко',
+        price: 80,
+        quantity: 5
+    },
+    {
+        product: 'Яйца',
+        price: 120,
+        quantity: 2
+    },
+    {
+        product: 'Сыр',
+        price: 350,
+        quantity: 3
+    },
+    {
+        product: 'Кофе',
+        price: 450,
+        quantity: 1
+    }
+]));
+

@@ -33,16 +33,16 @@ const concatenationOfStrings = (array) => {
 console.log(concatenationOfStrings(["apple", "banana", "cherry", "date"]));
 // На входе 5 значений. Все эти значения пользователь вводит с клавиатуры и
 // заполняет массив. Необходимо создать массив только из чисел.
-const filterNumbers = () => {
-    const values = [];
-    for (let i = 0; i < 5; i++) {
-        const input = prompt(`Значение ${i + 1}:`) || '';
-        const num = Number(input);
-        values.push(isNaN(num) ? input : num);
-    }
-    return values.filter((el) => typeof el === 'number');
-};
-console.log("Числа:", filterNumbers());
+// const filterNumbers = (): number[] => {
+//     const values: (number | string)[] = [];
+//     for (let i = 0; i < 5; i++) {
+//         const input = prompt(`Значение ${i + 1}:`) || '';
+//         const num = Number(input);
+//         values.push(isNaN(num) ? input : num);
+//     }
+//     return values.filter((el): el is number => typeof el === 'number');
+// };
+// console.log("Числа:", filterNumbers());
 // Создайте массив строк и проверьте, есть ли в нем хотя бы одно слово-палиндром.
 const isPalindrom = (array) => array.some(el => el === el.split('').reverse().join(''));
 console.log(isPalindrom(['lol', 'kot', 'шалаш', 'hello']));
@@ -84,11 +84,16 @@ const numEvenOrNo = (array) => {
     return sortArray;
 };
 console.log(numEvenOrNo([1, 2, 3, 4, 5, 6, 7]));
-// Напишите программу, которая находит и выводит наиболее часто встречающийся
-// символ в заданной строке.
 // На входе динамичный массив строк. Используя forEach создайте новый массив из
 // элементов, каждое значение которого имеет вид !name
 // [“hschool”, “company”] -> [“!hschool”, “!company”]
+const addExclamation = (arr) => {
+    const result = [];
+    arr.forEach((item) => result.push('!' + item));
+    return result;
+};
+console.log(addExclamation(["hschool", "company"]));
+console.log(addExclamation(["hello", "world", "test"]));
 // Создайте массив чисел и определите, является ли он строго возрастающей
 // последовательностью.
 const isStrictlyIncreasing = (arr) => {
@@ -98,18 +103,161 @@ const isStrictlyIncreasing = (arr) => {
     }
     return true;
 };
-console.log(isStrictlyIncreasing([1, 2, 3, 4, 5])); // true
-console.log(isStrictlyIncreasing([1, 2, 2, 3, 4])); // false (2 равно 2, не строго)
-// Создайте массив объектов, представляющих книги, и найдите книгу где автор
-// Булгаков (author – одно из полей объекта)
-// Создайте массив объектов, представляющих книги, и отобразите книги где цена
-// каждой > 50 (price – одно из полей объекта)
-// Создайте массив объектов, представляющих книги, и найдите книгу с самым
-// большим количеством страниц (count – одно из полей объекта)
-// Напишите программу, которая находит и выводит длину наиболее длинного
-// слова в заданной строке.
-// Создайте массив объектов, представляющих сотрудников, с полями "имя" и
-// "зарплата". Найдите среднюю зарплату всех сотрудников.
-// Дан массив объектов с полями "название", "цена" и "количество". Найдите
-// суммарную стоимостью всех товаров учитывая количество каждого.
-// Итог = цена_1_товара * кол-во_1_товара + цена_2_товара * кол-во_2_товара + ...
+console.log(isStrictlyIncreasing([1, 2, 3, 4, 5]));
+console.log(isStrictlyIncreasing([1, 2, 2, 3, 4]));
+const searchAuthor = (array) => array.filter(el => el.author === 'Булгаков');
+console.log(searchAuthor([
+    {
+        id: 1,
+        author: 'Булгаков',
+        year: 1925,
+        name: 'Собачье сердце'
+    },
+    {
+        id: 2,
+        author: 'Толстой',
+        year: 1869,
+        name: 'Война и мир'
+    },
+    {
+        id: 3,
+        author: 'Булгаков',
+        year: 1929,
+        name: 'Мастер и Маргарита'
+    },
+    {
+        id: 4,
+        author: 'Достоевский',
+        year: 1866,
+        name: 'Преступление и наказание'
+    }
+]));
+const searchPriceBook = (array) => array.filter(el => el.price > 350);
+console.log(searchPriceBook([
+    {
+        id: 1,
+        author: 'Булгаков',
+        year: 1925,
+        name: 'Собачье сердце',
+        price: 250
+    },
+    {
+        id: 2,
+        author: 'Толстой',
+        year: 1869,
+        name: 'Война и мир',
+        price: 450
+    },
+    {
+        id: 3,
+        author: 'Булгаков',
+        year: 1929,
+        name: 'Мастер и Маргарита',
+        price: 525
+    },
+    {
+        id: 4,
+        author: 'Достоевский',
+        year: 1866,
+        name: 'Преступление и наказание',
+        price: 550
+    }
+]));
+const searchLengthBook = (array) => array.reduce((maxBook, currentBook) => currentBook.length > maxBook.length ? currentBook : maxBook);
+console.log(searchLengthBook([
+    {
+        id: 1,
+        author: 'Булгаков',
+        year: 1925,
+        name: 'Собачье сердце',
+        price: 250,
+        length: 330
+    },
+    {
+        id: 2,
+        author: 'Толстой',
+        year: 1869,
+        name: 'Война и мир',
+        price: 450,
+        length: 1205
+    },
+    {
+        id: 3,
+        author: 'Булгаков',
+        year: 1929,
+        name: 'Мастер и Маргарита',
+        price: 525,
+        length: 986
+    },
+    {
+        id: 4,
+        author: 'Достоевский',
+        year: 1866,
+        name: 'Преступление и наказание',
+        price: 550,
+        length: 1200
+    }
+]));
+const averageSalary = (array) => array.reduce((sum, el) => el.salary + sum, 0);
+console.log(averageSalary([
+    {
+        name: 'Иван Петров',
+        salary: 85000,
+        profession: 'Разработчик',
+        position: 'Middle'
+    },
+    {
+        name: 'Анна Сидорова',
+        salary: 120000,
+        profession: 'Аналитик',
+        position: 'Senior'
+    },
+    {
+        name: 'Сергей Иванов',
+        salary: 55000,
+        profession: 'Тестировщик',
+        position: 'Junior'
+    },
+    {
+        name: 'Мария Козлова',
+        salary: 95000,
+        profession: 'Дизайнер',
+        position: 'Middle'
+    },
+    {
+        name: 'Алексей Смирнов',
+        salary: 110000,
+        profession: 'Менеджер проектов',
+        position: 'Senior'
+    }
+]));
+const shopSumProduct = (array) => {
+    return array.reduce((total, item) => total + (item.price * item.quantity), 0);
+};
+console.log(shopSumProduct([
+    {
+        product: 'Хлеб',
+        price: 50,
+        quantity: 10
+    },
+    {
+        product: 'Молоко',
+        price: 80,
+        quantity: 5
+    },
+    {
+        product: 'Яйца',
+        price: 120,
+        quantity: 2
+    },
+    {
+        product: 'Сыр',
+        price: 350,
+        quantity: 3
+    },
+    {
+        product: 'Кофе',
+        price: 450,
+        quantity: 1
+    }
+]));
