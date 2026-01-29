@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание постов</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>БлогПлатформа</h1>
+            <div class="post-count">
+                Создано постов: <span id="posts-counter"></span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <h2>Создать новый пост</h2>
+
+            <div class="post-form">
+                <div>
+                    <h3>Заголовок поста:</h3>
+                    <input type="text" placeholder="Введите текст заголовка...">
+                </div>
+                <div>
+                    <h3>Содержимое поста:</h3>
+                    <textarea id="post-content" placeholder="Введите текст вашего поста..."></textarea>
+                    <div class="counter"><span id="char-count"></span> символов</div>
+                </div>
+
+                <button id="publish-post">Опубликовать пост</button>
+            </div>
+
+            <h2>Опубликованные посты</h2>
+        </div>
+    </div>
+
+    <script src="../dist/app.js"></script>
+</body>
+
+</html>
