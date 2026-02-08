@@ -1,0 +1,326 @@
+.home {
+    --color-primary: #2B788B;
+    --color-primary-light: #C3DCE3;
+    --color-text: #000000;
+    --color-text-light: #585858;
+    --white: #FFFFFF;
+    --color-bg: #F6F5F4;
+}
+
+.home .hero {
+    padding: 80px;
+    background-color: var(--color-bg);
+}
+
+.home .hero .title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin: 0 0 40px 0;
+}
+
+.home .hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.home .hero .container .content {
+    flex: 1;
+}
+
+.home .hero .container .content .subtitle {
+    color: var(--color-text);
+    margin: 0 0 24px 0;
+    font: 800 56px/1.1 'Dela Gothic One', sans-serif;
+}
+
+.home .hero .container .content .description {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin: 0 0 40px 0;
+}
+
+.home .hero .container .content .actions {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.home .hero .container .content .actions .button,
+.home .knowledgeSection .containerKnowledge .button,
+.home .statisticSection .containerStatistics .button {
+    display: inline-block;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.home .hero .container .content .actions .button:hover,
+.home .knowledgeSection .containerKnowledge .button:hover,
+.home .statisticSection .containerStatistics .button:hover {
+    background-color: #B0D0D9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(43, 120, 139, 0.2);
+}
+
+.home .hero .container .content .actions .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.home .hero .container .content .actions .stats .stat {
+    text-align: left;
+}
+
+.home .hero .container .content .actions .stats .stat .number {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.home .hero .container .content .actions .stats .stat .label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+.home .hero .container .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .hero .container .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.home .playfulSection,
+.home .statisticSection {
+    padding: 60px 0;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding-left: 80px; 
+    padding-right: 80px; 
+}
+
+.home .knowledgeSection {
+    padding: 50px 80px; 
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.containerPlayful,
+.containerKnowledge,
+.containerStatistics {
+    flex: 1; 
+    max-width: 700px;
+}
+
+.home .playfulSection .image,
+.home .knowledgeSection .image,
+.home .statisticSection .image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .playfulSection .image img,
+.home .knowledgeSection .image img,
+.home .statisticSection .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.containerPlayful h2,
+.containerKnowledge h2,
+.containerStatistics h2 {
+    font: 800 48px/1.1 'Dela Gothic One', sans-serif;
+    margin-bottom: 24px;
+    color: var(--color-text);
+}
+
+.containerPlayful p,
+.containerKnowledge p,
+.containerStatistics p {
+    font-size: 20px;
+    color: var(--color-text-light); 
+    margin-bottom: 40px;
+}
+
+.containerPlayful div {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.containerPlayful .buttonsContainer {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.playfulBtnSprint,
+.playfulBtnTasks {
+    display: inline-block;
+    width: 131px;
+    height: 145px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.playfulBtnSprint {
+    background-image: url('../../assets/sprint.svg');
+}
+
+.playfulBtnTasks {
+    background-image: url('../../assets/tasks.svg');
+    width: 172px; 
+}
+
+.playfulBtnSprint:hover,
+.playfulBtnTasks:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 1200px) {
+    .home .hero .container,
+    .home .playfulSection,
+    .home .knowledgeSection,
+    .home .statisticSection {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .home .hero .container,
+    .home .playfulSection,
+    .home .knowledgeSection,
+    .home .statisticSection {
+        flex-direction: column;
+        text-align: center;
+        gap: 48px;
+    }
+    
+    .home .hero,
+    .home .playfulSection,
+    .home .knowledgeSection,
+    .home .statisticSection {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    .containerPlayful h2,
+    .containerKnowledge h2,
+    .containerStatistics h2 {
+        font-size: 40px;
+    }
+    
+    .containerPlayful p,
+    .containerKnowledge p,
+    .containerStatistics p {
+        font-size: 18px;
+    }
+    
+    .containerPlayful div {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .home .hero,
+    .home .playfulSection,
+    .home .knowledgeSection,
+    .home .statisticSection {
+        padding: 40px 20px;
+    }
+    
+    .home .hero .container .content .subtitle,
+    .containerPlayful h2,
+    .containerKnowledge h2,
+    .containerStatistics h2 {
+        font-size: 32px;
+    }
+    
+    .home .hero .container .content .description,
+    .containerPlayful p,
+    .containerKnowledge p,
+    .containerStatistics p {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .home .hero .container .content .actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    
+    .containerPlayful .buttonsContainer {
+        gap: 16px;
+    }
+    
+    .playfulBtnSprint,
+    .playfulBtnTasks {
+        width: 100px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home .hero .container .content .subtitle,
+    .containerPlayful h2,
+    .containerKnowledge h2,
+    .containerStatistics h2 {
+        font-size: 28px;
+    }
+    
+    .home .hero .container .content .description,
+    .containerPlayful p,
+    .containerKnowledge p,
+    .containerStatistics p {
+        font-size: 15px;
+    }
+    
+    .home .hero .container .content .actions .button {
+        padding: 12px 24px;
+        font-size: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .playfulBtnSprint,
+    .playfulBtnTasks {
+        width: 80px;
+        height: 90px;
+    }
+}

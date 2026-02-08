@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-store"></i> Simple Store</h1>
+            <p>Управление товарами через Fake Store API</p>
+        </header>
+
+        <main>
+            <section class="fetch-section">
+                <h2><i class="fas fa-download"></i> Получение товаров</h2>
+                <div class="fetch-actions">
+                    <button id="fetchProducts" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Получить все товары
+                    </button>
+                    <div><p>Нажмите кнопку, чтобы загрузить список товаров из Fake Store API</p></div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2><i class="fas fa-plus-circle"></i> Добавить новый товар</h2>
+                <form id="productForm">
+                    <div>
+                        <p><i class="fas fa-heading"></i> Название товара</p>
+                        <input type="text" id="title" name="title" required placeholder="Введите название товара">
+                    </div>
+
+                    <div>
+                        <p><i class="fas fa-tag"></i> Цена ($)</p>
+                        <input type="number" id="price" name="price" step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <div>
+                        <p><i class="fas fa-align-left"></i> Описание</p>
+                        <textarea id="description" name="description" rows="3" required
+                            placeholder="Введите описание товара"></textarea>
+                    </div>
+
+                    <div>
+                        <p><i class="fas fa-folder"></i> Категория</p>
+                        <select id="category" name="category" required>
+                            <option value="">Выберите категорию</option>
+                            <option value="men's clothing">Мужская одежда</option>
+                            <option value="women's clothing">Женская одежда</option>
+                            <option value="jewelery">Украшения</option>
+                            <option value="electronics">Электроника</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Добавить товар
+                        </button>
+                        <button type="button" id="clearForm" class="btn btn-secondary">
+                            <i class="fas fa-eraser"></i> Очистить форму
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="products-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-boxes"></i> Список товаров</h2>
+                    <div id="productsCount">
+                        <i class="fas fa-cube"></i>
+                        <span>Товаров: <span id="count">0</span></span>
+                    </div>
+                </div>
+
+                <div id="loading" class="loading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Загрузка товаров...
+                </div>
+
+                <div id="productsContainer" class="products-container">
+                    <div class="initial-state">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Товары еще не загружены</h3>
+                        <p>Нажмите кнопку "Получить все товары", чтобы загрузить список</p>
+                    </div>
+                </div>
+
+                <div id="noProducts" class="no-products" style="display: none;">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Товары не найдены</h3>
+                    <p>Добавьте новый товар, используя форму выше</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Simple Store &copy; 2023 | Использует <a href="https://fakestoreapi.com" target="_blank">Fake Store
+                    API</a></p>
+        </footer>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h3><i class="fas fa-exclamation-triangle"></i> Подтверждение удаления</h3>
+            <p>Вы уверены, что хотите удалить этот товар?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete" class="btn btn-danger">Да, удалить</button>
+                <button id="cancelDelete" class="btn btn-secondary">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/app.js"></script>
+</body>
+
+</html>

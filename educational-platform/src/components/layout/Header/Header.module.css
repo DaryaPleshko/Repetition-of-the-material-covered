@@ -1,0 +1,61 @@
+.header {
+    --primary-color: #2B788B;
+    --primary-dark: #236171;
+    --text-color: #000000;
+    --white: #f8f9fa;
+    --color-bg: #F6F5F4;
+    --transition: 0.3s ease;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--color-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.header .logo:hover {
+    color: var(--primary-color);
+}
+
+.header .authButtons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header .authButtons .loginButton {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.header .authButtons .loginButton:hover {
+    color: var(--primary-color);
+}
+
+.header .authButtons .signupButton {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color var(--transition);
+}
+
+.header .authButtons .signupButton:hover {
+    background-color: var(--primary-dark);
+}

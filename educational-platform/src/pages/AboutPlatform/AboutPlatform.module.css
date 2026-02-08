@@ -1,0 +1,234 @@
+.aboutPage {
+    min-height: 100vh;
+    background-color: #F6F5F4;
+    padding: 60px 20px;
+}
+
+.aboutPage .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.aboutPage .container .header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aboutPage .container .header h1 {
+    font: 800 56px 'Dela Gothic One', sans-serif;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.aboutPage .container .header p {
+    font-size: 20px;
+    color: #585858;
+}
+
+.aboutPage .container .section {
+    margin-bottom: 60px;
+}
+
+.aboutPage .container .quote {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.aboutPage .container .quoteText {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.aboutPage .container .quoteText::before {
+    content: '"';
+    font-size: 60px;
+    color: #2B788B;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    opacity: 0.3;
+}
+
+.aboutPage .container .author {
+    font-weight: 600;
+    color: #2B788B;
+    text-align: right;
+    font-size: 16px;
+}
+
+.aboutPage .container .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.aboutPage .container .card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutPage .container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.aboutPage .container .cardIcon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.aboutPage .container .card h3 {
+    font: 600 20px 'Dela Gothic One', sans-serif;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.aboutPage .container .card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #585858;
+}
+
+.aboutPage .container .conclusion {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.aboutPage .container .conclusion h2 {
+    font: 600 32px 'Dela Gothic One', sans-serif;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.aboutPage .container .roles {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.aboutPage .container .role {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.aboutPage .container .roleIcon {
+    font-size: 32px;
+    display: block;
+}
+
+.aboutPage .container .role span:last-child {
+    font-weight: 600;
+    color: #2B788B;
+}
+
+.aboutPage .container .finalMessage {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.aboutPage .container .cta {
+    text-align: center;
+}
+
+.aboutPage .container .ctaButton {
+    display: inline-block;
+    background-color: #2B788B;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.aboutPage .container .ctaButton:hover {
+    background-color: #236171;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(43, 120, 139, 0.2);
+}
+
+@media (max-width: 992px) {
+    .aboutPage .container .header h1 {
+        font-size: 48px;
+    }
+    
+    .aboutPage .container .grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutPage {
+        padding: 40px 15px;
+    }
+    
+    .aboutPage .container .header h1 {
+        font-size: 36px;
+    }
+    
+    .aboutPage .container .header p {
+        font-size: 18px;
+    }
+    
+    .aboutPage .container .quote {
+        padding: 30px 25px;
+    }
+    
+    .aboutPage .container .quoteText {
+        font-size: 16px;
+    }
+    
+    .aboutPage .container .card {
+        padding: 25px;
+    }
+    
+    .aboutPage .container .roles {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutPage .container .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .aboutPage .container .header h1 {
+        font-size: 32px;
+    }
+    
+    .aboutPage .container .conclusion {
+        padding: 30px 20px;
+    }
+    
+    .aboutPage .container .conclusion h2 {
+        font-size: 24px;
+    }
+    
+    .aboutPage .container .roleIcon {
+        font-size: 24px;
+    }
+}
