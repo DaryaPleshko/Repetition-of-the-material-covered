@@ -15,25 +15,23 @@ const Home = () => {
                 <div className={styles.container}>
                     <div className={styles.content}>
                         <h2 className={styles.subtitle}>
-                            Learning and<br />
-                            teaching online,<br />
-                            made easy.
+                            Онлайн-курсы, которые хочется проходить.
                         </h2>
 
                         <p className={styles.description}>
-                            Any subject, in any language, on any device,<br />
-                            for all ages!
+                            <span>FREE</span> сопровождение, вечный доступ к лекциям <br />
+                            Созвоны и поддержка до получения оффера!
                         </p>
 
                         <div className={styles.actions}>
                             <Link to="/about" className={styles.button}>
-                                About platform
+                                О платформе
                             </Link>
 
                             <div className={styles.stats}>
                                 <div className={styles.stat}>
                                     <div className={styles.number}>600+</div>
-                                    <div className={styles.label}>Students</div>
+                                    <div className={styles.label}>Студентов</div>
                                 </div>
                             </div>
                         </div>
@@ -45,28 +43,25 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className={styles.playfulSection}>
+            <section className={styles.statisticSection}>
                 <div className={styles.image}>
-                    <img src={playfulImage} alt="Online learning" />
+                    <img src={progressImage} alt="Progress tracking" />
                 </div>
-                <div className={styles.containerPlayful}>
-                    <h2>Learn a language <br />
-                    in a playful way</h2>
-                    <p>Make learning programming languages more fun <br />
-                    with mini-games</p>
-                    <div className={styles.buttonsContainer}>
-                        <Link to="/sprint" className={styles.playfulBtnSprint}></Link>
-                        <Link to="/tasks" className={styles.playfulBtnTasks}></Link>
-                    </div>
+                <div className={styles.containerStatistics}>
+                    <h2>HSchool в цифрах</h2>
+                    <p>Цифры, которые говорят сами за себя</p>
+                    <Link to="/statistics" className={styles.button}>
+                        Перейти к статистике →
+                    </Link>
                 </div>
             </section>
 
             <section className={styles.knowledgeSection}>
                 <div className={styles.containerKnowledge}>
-                    <h2>Increase your knowledge</h2>
-                    <p>Traditional and new effective approaches to learning languages</p>
+                    <h2>Хочешь освоить программирование с нуля?</h2>
+                    <p>Понятные объяснения и практика — всё, чтобы сделать первый шаг в IT</p>
                     <Link to="/courses" className={styles.button}>
-                        Textbook →
+                        Выбрать курс →
                     </Link>
                 </div>
                 <div className={styles.image}>
@@ -74,18 +69,32 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className={styles.statisticSection}>
+            <section className={styles.playfulSection}>
                 <div className={styles.image}>
-                    <img src={progressImage} alt="Progress tracking" />
+                    <img src={playfulImage} alt="Online learning" />
                 </div>
-                <div className={styles.containerStatistics}>
-                    <h2>Watch your progress every day</h2>
-                    <p>Save statistics on your achievements and mistakes</p>
-                    <Link to="/statistics" className={styles.button}>
-                        Statistics →
-                    </Link>
+                <div className={styles.containerPlayful}>
+                    <h2>Тренируй собеседования <br />
+                        в игровом формате</h2>
+                    <p>Твой личный тренажёр перед оффером мечты</p>
+
+                    <div className={styles.buttonsContainer}>
+                        <Link to="/sprint" className={styles.playfulBtnSprint}>
+                            <div className={styles.playfulPosition}>
+                                <div className={styles.btnIconSprint}></div>
+                                <span className={styles.btnTextSprint}>Изучение →</span>
+                            </div>
+                        </Link>
+                        <Link to="/tasks" className={styles.playfulBtnTasks}>
+                            <div className={styles.playfulPosition}>
+                                <div className={styles.btnIconTasks}></div>
+                                <span className={styles.btnTextTasks}>Практика →</span>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             </section>
+
         </div>
     );
 };

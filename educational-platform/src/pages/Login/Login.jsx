@@ -7,8 +7,8 @@ const Login = () => {
     return (
         <div className={styles.loginPage}>
             <div className={styles.loginContainer}>
-                <h1>Login</h1>
-                <p>Enter your credentials to access your account</p>
+                <h1>Вход</h1>
+                <p>Введите учетные данные для доступа к своему аккаунту!</p>
 
                 <form>
                     <div className={styles.formGroup}>
@@ -19,11 +19,11 @@ const Login = () => {
                         <input type="password" placeholder="Password" />
                     </div>
 
-                    <button type="submit" className={styles.loginButton}>Login</button>
+                    <button type="submit" className={styles.loginButton}>Войти</button>
 
                     <div className={styles.registerLink}>
-                        Don't have an account?
-                        <Link to="/signup" className={styles.signUp}> Sign up</Link>
+                        Ещё не с нами?
+                        <Link to="/signup" className={styles.signUp}> Присоединиться</Link>
                     </div>
                 </form>
             </div>

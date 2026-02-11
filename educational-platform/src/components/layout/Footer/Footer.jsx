@@ -8,17 +8,19 @@ import footerIcon3 from '../../../assets/footer3.svg';
 
 const Footer = () => {
     const menuItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Textbook', path: '/courses' },
-        { label: 'Statistics', path: '/statistics' },
-        { label: 'Sprint', path: '/sprint' }
+        { label: 'Главная', path: '/' },
+        { label: 'О нас', path: '/about' },
+        { label: 'Курсы', path: '/courses' },
+        { label: 'Статистика', path: '/statistics' }
     ];
 
     const team = [
-        { name: 'Darya', role: 'Developer' },
-        { name: 'Hanna', role: 'Founder & JS developer & mentor' },
-        { name: 'Daniil', role: 'Java developer & mentor' },
-        { name: 'Stanislav', role: 'C# developer & mentor' },
+        { name: 'Дарья', role: 'Developer' },
+        { name: 'Анна', role: 'Founder & JS developer & TS developer & mentor' },
+        { name: 'Даниил', role: 'Java developer & mentor' },
+        { name: 'Станислав', role: 'C# developer & mentor' },
+        { name: 'Наталья', role: 'Pytnon developer & mentor' },
+        { name: 'Юрий', role: 'TS developer & mentor' }
     ];
 
     return (
@@ -28,7 +30,7 @@ const Footer = () => {
                 <div className={styles.footerTop}>
 
                     <div className={styles.footerSection}>
-                        <h3 className={styles.footerTitle}>Navigation</h3>
+                        <h3 className={styles.footerTitle}>Навигация</h3>
                         <nav className={styles.footerNav}>
                             {menuItems.map((item) => (
                                 <Link key={item.path} to={item.path} className={styles.footerLink}>
@@ -38,7 +40,7 @@ const Footer = () => {
                     </div>
 
                     <div className={styles.footerSection}>
-                        <h3 className={styles.footerTitle}>Our Team</h3>
+                        <h3 className={styles.footerTitle}>Наша команда</h3>
                         <div className={styles.teamList}>
                             {team.map((person) => (
                                 <div key={person.name} className={styles.teamMember}>

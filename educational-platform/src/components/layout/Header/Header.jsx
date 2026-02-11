@@ -8,8 +8,8 @@ const Header = () => {
             <Link to="/" className={styles.logo}>Hschool</Link>
 
             <div className={styles.authButtons}>
-                <Link to="/login" className={styles.loginButton}>Login →</Link>
-                <Link to="/signup" className={styles.signupButton}>Sign Up</Link>
+                <Link to="/login" className={styles.loginButton}>Войти →</Link>
+                <Link to="/signup" className={styles.signupButton}>Присоединиться</Link>
             </div>
         </header>
     );

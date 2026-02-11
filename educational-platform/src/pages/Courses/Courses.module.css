@@ -1,0 +1,136 @@
+.coursesSection {
+    padding: 40px 20px 80px 20px;
+    background-color: #F6F5F4;
+    min-height: 100vh;
+}
+
+.coursesSection .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coursesSection .container h1 {
+    font: 800 56px 'Dela Gothic One', sans-serif;
+    color: #000000;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.coursesSection .container .coursesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.coursesSection .container .coursesGrid .courseCard {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+}
+
+.coursesSection .container .coursesGrid .courseCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(43, 120, 139, 0.1);
+}
+
+.coursesSection .container .coursesGrid .courseCard div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.coursesSection .container .coursesGrid .courseCard div img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.coursesSection .container .coursesGrid .courseCard div h2 {
+    font: 700 24px 'Inter', sans-serif;
+    color: #2B788B;
+    margin: 0;
+}
+
+.coursesSection .container .coursesGrid .courseCard p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #585858;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.coursesSection .container .coursesGrid .courseCard .courseLink {
+    color: #2B788B;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.coursesSection .container .coursesGrid .courseCard .courseLink:hover {
+    gap: 12px;
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    .coursesSection .container .coursesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .coursesSection .container h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .coursesSection {
+        padding: 60px 20px;
+    }
+
+    .coursesSection .container h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .coursesSection .container .coursesGrid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .coursesSection .container .coursesGrid .courseCard {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .coursesSection {
+        padding: 40px 16px;
+    }
+
+    .coursesSection .container h1 {
+        font-size: 36px;
+    }
+
+    .coursesSection .container .coursesGrid .courseCard div {
+        gap: 12px;
+    }
+
+    .coursesSection .container .coursesGrid .courseCard div img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .coursesSection .container .coursesGrid .courseCard div h2 {
+        font-size: 22px;
+    }
+}

@@ -8,7 +8,7 @@
 }
 
 .home .hero {
-    padding: 80px;
+    padding: 75px;
     background-color: var(--color-bg);
 }
 
@@ -44,6 +44,10 @@
     line-height: 1.6;
     color: var(--color-text-light);
     margin: 0 0 40px 0;
+}
+
+.home .hero .container .content span {
+    color: var(--color-primary);
 }
 
 .home .hero .container .content .actions {
@@ -118,12 +122,12 @@
     align-items: center;
     justify-content: center;
     gap: 80px;
-    padding-left: 80px; 
-    padding-right: 80px; 
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .home .knowledgeSection {
-    padding: 50px 80px; 
+    padding: 50px 80px 0 80px;
     background-color: var(--color-bg);
     display: flex;
     align-items: center;
@@ -134,14 +138,14 @@
 .containerPlayful,
 .containerKnowledge,
 .containerStatistics {
-    flex: 1; 
+    flex: 1;
     max-width: 700px;
 }
 
 .home .playfulSection .image,
 .home .knowledgeSection .image,
 .home .statisticSection .image {
-    flex: 1; 
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,14 +170,8 @@
 .containerKnowledge p,
 .containerStatistics p {
     font-size: 20px;
-    color: var(--color-text-light); 
+    color: var(--color-text-light);
     margin-bottom: 40px;
-}
-
-.containerPlayful div {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
 }
 
 .containerPlayful .buttonsContainer {
@@ -182,37 +180,89 @@
     flex-wrap: wrap;
 }
 
-.playfulBtnSprint,
-.playfulBtnTasks {
-    display: inline-block;
-    width: 131px;
+.containerPlayful .buttonsContainer .playfulBtnSprint,
+.containerPlayful .buttonsContainer .playfulBtnTasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 172px;
     height: 145px;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 20px;
+    margin-top: 30px;
     opacity: 0.8;
 }
 
-.playfulBtnSprint {
-    background-image: url('../../assets/sprint.svg');
+.containerPlayful .buttonsContainer .playfulBtnSprint {
+    background-color: #F2D4DC;
 }
 
-.playfulBtnTasks {
-    background-image: url('../../assets/tasks.svg');
-    width: 172px; 
+.containerPlayful .buttonsContainer .playfulBtnTasks {
+    background-color: #C3DCE3;
+    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
 }
 
-.playfulBtnSprint:hover,
-.playfulBtnTasks:hover {
-    opacity: 1;
+.containerPlayful .buttonsContainer .playfulBtnSprint:hover,
+.containerPlayful .buttonsContainer .playfulBtnTasks:hover {
     transform: translateY(-3px);
+    opacity: 1;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
+.containerPlayful .buttonsContainer .playfulPosition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 20px;
+}
+
+.containerPlayful .buttonsContainer .btnIconSprint,
+.containerPlayful .buttonsContainer .btnIconTasks {
+    width: 172px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 2px;
+}
+
+.containerPlayful .buttonsContainer .btnTextSprint,
+.containerPlayful .buttonsContainer .btnTextTasks {
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0.9;
+    transition: transform 0.2s ease;
+    text-align: center;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.containerPlayful .buttonsContainer .btnIconSprint {
+    background-image: url('../../assets/sprint_.svg');
+    width: 169px;
+}
+
+.containerPlayful .buttonsContainer .btnIconTasks {
+    background-image: url('../../assets/tasks.svg');
+}
+
+.containerPlayful .buttonsContainer .btnTextSprint {
+    color: #945069;
+}
+
+.containerPlayful .buttonsContainer .btnTextTasks {
+    color: #2B788B;
+}
 
 @media (max-width: 1200px) {
+
     .home .hero .container,
     .home .playfulSection,
     .home .knowledgeSection,
@@ -222,6 +272,7 @@
 }
 
 @media (max-width: 992px) {
+
     .home .hero .container,
     .home .playfulSection,
     .home .knowledgeSection,
@@ -230,7 +281,13 @@
         text-align: center;
         gap: 48px;
     }
-    
+
+    .home .hero .container .content .actions {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
     .home .hero,
     .home .playfulSection,
     .home .knowledgeSection,
@@ -238,39 +295,40 @@
         padding-left: 40px;
         padding-right: 40px;
     }
-    
+
     .containerPlayful h2,
     .containerKnowledge h2,
     .containerStatistics h2 {
         font-size: 40px;
     }
-    
+
     .containerPlayful p,
     .containerKnowledge p,
     .containerStatistics p {
         font-size: 18px;
     }
-    
+
     .containerPlayful div {
         justify-content: center;
     }
 }
 
 @media (max-width: 768px) {
+
     .home .hero,
     .home .playfulSection,
     .home .knowledgeSection,
     .home .statisticSection {
         padding: 40px 20px;
     }
-    
+
     .home .hero .container .content .subtitle,
     .containerPlayful h2,
     .containerKnowledge h2,
     .containerStatistics h2 {
         font-size: 32px;
     }
-    
+
     .home .hero .container .content .description,
     .containerPlayful p,
     .containerKnowledge p,
@@ -278,17 +336,11 @@
         font-size: 16px;
         margin-bottom: 32px;
     }
-    
-    .home .hero .container .content .actions {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-    }
-    
+
     .containerPlayful .buttonsContainer {
         gap: 16px;
     }
-    
+
     .playfulBtnSprint,
     .playfulBtnTasks {
         width: 100px;
@@ -297,27 +349,28 @@
 }
 
 @media (max-width: 480px) {
+
     .home .hero .container .content .subtitle,
     .containerPlayful h2,
     .containerKnowledge h2,
     .containerStatistics h2 {
         font-size: 28px;
     }
-    
+
     .home .hero .container .content .description,
     .containerPlayful p,
     .containerKnowledge p,
     .containerStatistics p {
         font-size: 15px;
     }
-    
+
     .home .hero .container .content .actions .button {
         padding: 12px 24px;
         font-size: 15px;
         width: 100%;
         text-align: center;
     }
-    
+
     .playfulBtnSprint,
     .playfulBtnTasks {
         width: 80px;

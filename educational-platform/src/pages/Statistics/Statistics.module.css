@@ -1,0 +1,227 @@
+.statisticsSection {
+    padding: 80px 20px;
+    background-color: #F6F5F4;
+    min-height: 100vh;
+}
+
+.statisticsSection .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.statisticsSection .container h1 {
+    font: 800 56px 'Dela Gothic One', sans-serif;
+    color: #000000;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.statisticsSection .container .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.statisticsSection .container .statsGrid .statsCard {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statisticsSection .container .statsGrid .statsCard h2 {
+    font: 700 24px 'Inter', sans-serif;
+    color: #2B788B;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #F6F5F4;
+}
+
+.statisticsSection .container .statsGrid .statsCard .statsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statisticsSection .container .statsGrid .statsCard .statsList div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.statisticsSection .container .statsGrid .statsCard .statsList div p {
+    color: #585858;
+    font-weight: 500;
+}
+
+.statisticsSection .container .statsGrid .statsCard .statsList div span {
+    font-weight: 700;
+    font-size: 24px;
+    color: #2B788B;
+}
+
+.statisticsSection .container .statsGrid .statsCard .courseStats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statisticsSection .container .statsGrid .statsCard .courseStats .courseState {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.statisticsSection .container .statsGrid .statsCard .courseStats .courseState p{
+    min-width: 100px;
+    font-weight: 600;
+    color: #333;
+}
+
+.statisticsSection .container .statsGrid .statsCard .courseStats .courseState .progressBar {
+    flex: 1;
+    height: 8px;
+    background-color: #F6F5F4;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.statisticsSection .container .statsGrid .statsCard .courseStats .courseState .progressBar div {
+    height: 100%;
+    background: linear-gradient(135deg, #2B788B 0%, #1a5a6e 100%);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.statisticsSection .container .statsGrid .statsCard .courseStats .courseState span {
+    min-width: 50px;
+    font-weight: 600;
+    color: #2B788B;
+    text-align: right;
+}
+
+.statisticsSection .container .statsGrid .statsCard .achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statisticsSection .container .statsGrid .statsCard .achievements  .achievement {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #F9F9F9;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.statisticsSection .container .statsGrid .statsCard .achievements .achievement:hover {
+    background-color: #F0F0F0;
+}
+
+.statisticsSection .container .statsGrid .statsCard .achievements .achievement .achievementIcon {
+    font-size: 32px;
+}
+
+.statisticsSection .container .statsGrid .statsCard .achievements .achievement .achievementInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.statisticsSection .container .statsGrid .statsCard .achievements .achievement .achievementInfo p {
+    font-weight: 700;
+    color: #333;
+}
+
+.statisticsSection .container .statsGrid .statsCard .achievements .achievement .achievementInfo span{
+    font-size: 14px;
+    color: #585858;
+}
+
+.statisticsSection .container .statsGrid .statsCard .progressStats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.statisticsSection .container .statsGrid .statsCard .progressStats div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    background-color: #F9F9F9;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.statisticsSection .container .statsGrid .statsCard .progressStats div p {
+    font-size: 16px;
+    color: #585858;
+}
+
+.statisticsSection .container .statsGrid .statsCard .progressStats div span {
+    font-weight: 700;
+    font-size: 28px;
+    color: #2B788B;
+}
+
+@media (max-width: 992px) {
+    .statisticsSection .container .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .statisticsSection .container h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .statisticsSection {
+        padding: 60px 20px;
+    }
+
+    .statisticsSection .container h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .statisticsSection .container .statsGrid .statsCard {
+        padding: 25px;
+    }
+
+    .statisticsSection .container .statsGrid .statsCard .progressStats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .statisticsSection {
+        padding: 40px 16px;
+    }
+
+    .statisticsSection .container h1 {
+        font-size: 36px;
+    }
+
+    .statisticsSection .container .statsGrid .statsCard h2 {
+        font-size: 22px;
+    }
+
+    .statisticsSection .container .statsGrid .statsCard .courseStats .courseStat {
+        flex-wrap: wrap;
+    }
+
+    .statisticsSection .container .statsGrid .statsCard .courseStats .courseStat p {
+        min-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .statisticsSection .container .statsGrid .statsCard .statsList div span {
+        font-size: 20px;
+    }
+}

@@ -7,8 +7,8 @@ const SignUp = () => {
     return (
         <div className={styles.signupPage}>
             <div className={styles.signupContainer}>
-                <h1>Sign Up</h1>
-                <p>Create your account to get started</p>
+                <h1>Регистрация</h1>
+                <p>Создайте аккаунт, чтобы начать обучение!</p>
 
                 <form>
                     <div className={styles.formGroup}>
@@ -28,8 +28,8 @@ const SignUp = () => {
                     </div>
 
                     <div className={styles.loginLink}>
-                        Already have an account?
-                        <Link to="/login" className={styles.login}> Log in</Link>
+                        Уже с нами?
+                        <Link to="/login" className={styles.login}> Войти</Link>
                     </div>
                 </form>
             </div>
