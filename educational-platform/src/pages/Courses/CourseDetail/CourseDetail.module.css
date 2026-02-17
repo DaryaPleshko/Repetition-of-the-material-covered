@@ -1,0 +1,620 @@
+:root {
+    --bg-main: #F6F5F4;
+    --bg-white: #FFFFFF;
+    --bg-light: #F9F9F9;
+    --bg-hover: #F0F0F0;
+    --bg-soft: #FFF8E7;
+    
+    --primary: #2B788B;
+    --primary-dark: #236171;
+    --secondary: #945069;
+    --accent-js: #F7DF1E;
+    --drive: #4285F4;
+    --drive-dark: #3367D6;
+    
+    --text-dark: #333;
+    --text-light: #585858;
+    --text-white: #FFFFFF;
+    --border: #E0E0E0;
+    --border-light: #F0F0F0;
+    
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+    
+    --font-title: 800 36px 'Dela Gothic One', sans-serif;
+    --font-subtitle: 700 24px 'Inter', sans-serif;
+    --font-card: 700 18px 'Inter', sans-serif;
+    --font-base: 16px 'Inter', sans-serif;
+}
+
+.courseDetailPage {
+    min-height: 100vh;
+    background-color: var(--bg-main);
+    padding: 40px 20px 80px;
+}
+
+.courseDetailPage .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.courseDetailPage .container .breadcrumbs {
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.courseDetailPage .container .breadcrumbs a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.courseDetailPage .container .breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.courseDetailPage .container .breadcrumbs span {
+    margin-left: 5px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.courseDetailPage .container .courseHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: var(--bg-white);
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-md);
+}
+
+.courseDetailPage .container .courseHeader .headerLeft {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.courseDetailPage .container .courseHeader .headerLeft img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.courseDetailPage .container .courseHeader .headerLeft h1 {
+    font: var(--font-title);
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.courseDetailPage .container .courseHeader .headerLeft p {
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.courseDetailPage .container .courseHeader .headerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.courseDetailPage .container .courseHeader .headerRight .badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.courseDetailPage .container .courseHeader .headerRight .badges span {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.courseDetailPage .container .courseHeader .headerRight .badges span:first-child {
+    background-color: #C3DCE3;
+    color: var(--primary);
+}
+
+.courseDetailPage .container .courseHeader .headerRight .badges span:nth-child(2) {
+    background-color: #F2D4DC;
+    color: var(--secondary);
+}
+
+.courseDetailPage .container .courseHeader .headerRight .badges span:last-child {
+    background-color: #E0E0E0;
+    color: var(--text-dark);
+}
+
+.courseDetailPage .container .courseHeader .headerRight .stats {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.courseDetailPage .container .contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection h2 {
+    font: var(--font-subtitle);
+    color: var(--primary);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--bg-main);
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleHeader {
+    background-color: var(--bg-main);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleHeader h3 {
+    font: var(--font-card);
+    color: var(--primary);
+    margin: 0;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleHeader span {
+    font-size: 14px;
+    color: var(--text-light);
+    background: var(--bg-white);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleContent {
+    padding: 20px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleContent ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleContent li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleContent li:last-child {
+    border-bottom: none;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleContent li::before {
+    content: "•";
+    color: var(--primary);
+    font-size: 18px;
+    position: absolute;
+    left: 4px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleContent .moduleTests {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background-color: var(--bg-soft);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--secondary);
+    border-left: 4px solid var(--accent-js);
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleContent .moduleTests span {
+    margin-right: 8px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .topicsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .topicsList div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .topicsList div:hover {
+    background-color: var(--bg-hover);
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .topicsList span:first-child {
+    width: 28px;
+    height: 28px;
+    background-color: var(--primary);
+    color: var(--text-white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.courseDetailPage .container .contentGrid .leftColumn .programSection .topicsList span:last-child {
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard h3 {
+    font: var(--font-card);
+    color: var(--primary);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--bg-main);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .statsGrid div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    background-color: var(--bg-light);
+    border-radius: 12px;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .statsGrid span:first-child {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .statsGrid span:last-child {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard li:last-child {
+    border-bottom: none;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard li span:first-child {
+    font-size: 18px;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .formatInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .formatInfo div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .formatInfo span:first-child {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard .formatInfo span:last-child {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: var(--drive);
+    color: var(--text-white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .infoCard a:hover {
+    background-color: var(--drive-dark);
+    transform: translateY(-2px);
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .ctaSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .ctaSection a {
+    background-color: var(--primary);
+    color: var(--text-white);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.courseDetailPage .container .contentGrid .rightColumn .ctaSection a:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(43, 120, 139, 0.2);
+}
+
+.courseDetailPage .container .fullDescription {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.courseDetailPage .container .fullDescription h2 {
+    font: var(--font-subtitle);
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.courseDetailPage .container .fullDescription p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.courseDetailPage .container .checkpointsSection {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.courseDetailPage .container .checkpointsSection h2 {
+    font: var(--font-subtitle);
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.courseDetailPage .container .checkpointsSection .checkpointsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.courseDetailPage .container .checkpointsSection .checkpointsGrid div {
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.courseDetailPage .container .checkpointsSection .checkpointsGrid div div:first-child {
+    font-size: 32px;
+    margin-bottom: 12px;
+    padding: 0;
+    background: none;
+}
+
+.courseDetailPage .container .checkpointsSection .checkpointsGrid h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.courseDetailPage .container .checkpointsSection .checkpointsGrid p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.courseDetailPage .container .forWhom {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.courseDetailPage .container .forWhom h2 {
+    font: var(--font-subtitle);
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.courseDetailPage .container .forWhom .whomGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.courseDetailPage .container .forWhom .whomGrid div {
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 16px;
+}
+
+.courseDetailPage .container .forWhom .whomGrid h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.courseDetailPage .container .forWhom .whomGrid p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.courseDetailPage .notFound {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.courseDetailPage .notFound h2 {
+    font-size: 32px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.courseDetailPage .notFound a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.courseDetailPage .notFound a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .courseDetailPage .container .contentGrid {
+        grid-template-columns: 1fr;
+    }
+    .courseDetailPage .container .checkpointsSection .checkpointsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .courseDetailPage .container .forWhom .whomGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .courseDetailPage .container .courseHeader {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .courseDetailPage .container .courseHeader .headerLeft,
+    .courseDetailPage .container .courseHeader .headerRight {
+        width: 100%;
+    }
+    .courseDetailPage .container .courseHeader .headerRight {
+        align-items: flex-start;
+    }
+    .courseDetailPage .container .courseHeader .headerRight .badges {
+        justify-content: flex-start;
+    }
+    .courseDetailPage .container .checkpointsSection .checkpointsGrid,
+    .courseDetailPage .container .forWhom .whomGrid {
+        grid-template-columns: 1fr;
+    }
+    .courseDetailPage .container .courseHeader .headerLeft img {
+        width: 60px;
+        height: 60px;
+    }
+    .courseDetailPage .container .courseHeader .headerLeft h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .courseDetailPage {
+        padding: 20px 15px;
+    }
+    .courseDetailPage .container .courseHeader {
+        padding: 20px;
+    }
+    .courseDetailPage .container .courseHeader .headerLeft {
+        flex-direction: column;
+        text-align: center;
+    }
+    .courseDetailPage .container .contentGrid .rightColumn .infoCard .statsGrid {
+        grid-template-columns: 1fr;
+    }
+    .courseDetailPage .container .contentGrid .leftColumn .programSection h2,
+    .courseDetailPage .container .fullDescription h2,
+    .courseDetailPage .container .checkpointsSection h2,
+    .courseDetailPage .container .forWhom h2 {
+        font-size: 22px;
+    }
+    .courseDetailPage .container .contentGrid .leftColumn .programSection .modules .module .moduleHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

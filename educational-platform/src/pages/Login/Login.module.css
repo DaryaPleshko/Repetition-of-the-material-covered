@@ -8,6 +8,8 @@
     --color-input-bg: #F6F5F4;
     --color-input-focus: #E8E8E8;
     --color-white: #FFFFFF;
+    --color-error: #c62828;
+    --color-error-bg: #ffebee;
 }
 
 .loginPage {
@@ -43,12 +45,13 @@
 
 .loginPage .loginContainer .formGroup {
     margin-bottom: 24px;
+    position: relative;
 }
 
 .loginPage .loginContainer .formGroup input {
     width: 100%;
     padding: 16px 20px;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 12px;
     font-size: 16px;
     background-color: var(--color-input-bg);
@@ -59,10 +62,42 @@
 .loginPage .loginContainer .formGroup input:focus {
     outline: none;
     background-color: var(--color-input-focus);
+    border-color: var(--color-primary);
 }
 
 .loginPage .loginContainer .formGroup input::placeholder {
     color: var(--color-placeholder);
+}
+
+.loginPage .loginContainer .formGroup input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.loginPage .loginContainer .formGroup input.inputError {
+    border: 2px solid var(--color-error);
+    background-color: var(--color-error-bg);
+}
+
+.loginPage .loginContainer .formGroup .errorText {
+    color: var(--color-error);
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+}
+
+.loginPage .loginContainer .errorMessage {
+    background-color: var(--color-error-bg);
+    color: var(--color-error);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid var(--color-error);
 }
 
 .loginPage .loginContainer .loginButton {
@@ -85,6 +120,23 @@
     box-shadow: 0 4px 12px rgba(43, 120, 139, 0.2);
 }
 
+.loginPage .loginContainer .loginButton:active {
+    transform: translateY(0);
+}
+
+.loginPage .loginContainer .loginButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.loginPage .loginContainer .loginButton:disabled:hover {
+    background-color: var(--color-primary);
+    transform: none;
+    box-shadow: none;
+}
+
 .loginPage .loginContainer .registerLink {
     margin-top: 24px;
     color: var(--color-text-light);
@@ -97,10 +149,18 @@
     text-decoration: none;
     font-weight: 600;
     margin-left: 4px;
+    transition: all 0.3s ease;
 }
 
 .loginPage .loginContainer .registerLink .signUp:hover {
     text-decoration: underline;
+    color: var(--color-primary-hover);
+}
+
+.loginPage .loginContainer .registerLink .signUp:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 .loginPage .image {
@@ -114,6 +174,14 @@
     max-width: 100%;
     height: auto;
     max-height: 600px;
+    object-fit: contain;
+}
+
+.loginPage .loginContainer .formGroup input:focus-visible,
+.loginPage .loginContainer .loginButton:focus-visible,
+.loginPage .loginContainer .registerLink .signUp:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 @media (max-width: 992px) {
@@ -130,4 +198,80 @@
     .loginPage .image img {
         max-height: 400px;
     }
+    
+    .loginPage .loginContainer {
+        padding: 40px;
+    }
+    
+    .loginPage .loginContainer h1 {
+        font-size: 48px;
+    }
+    
+    .loginPage .loginContainer p {
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .loginPage {
+        padding: 20px 15px;
+    }
+    
+    .loginPage .loginContainer {
+        padding: 30px 20px;
+    }
+    
+    .loginPage .loginContainer h1 {
+        font-size: 36px;
+    }
+    
+    .loginPage .loginContainer p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .loginPage .loginContainer .formGroup input {
+        padding: 14px 16px;
+    }
+    
+    .loginPage .loginContainer .loginButton {
+        padding: 14px;
+    }
+    
+    .loginPage .image img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    .loginPage .loginContainer {
+        padding: 20px 15px;
+    }
+    
+    .loginPage .loginContainer h1 {
+        font-size: 28px;
+    }
+    
+    .loginPage .loginContainer p {
+        font-size: 14px;
+    }
+    
+    .loginPage .loginContainer .formGroup input {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+    
+    .loginPage .loginContainer .loginButton {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .loginPage .loginContainer .registerLink {
+        font-size: 13px;
+    }
+}
+
+.loginPage .loginContainer .errorMessage {
+    animation: fadeIn 0.3s ease;
 }
