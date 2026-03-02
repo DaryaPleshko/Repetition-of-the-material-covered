@@ -1,0 +1,22 @@
+:root {
+    --color-primary: #2B788B;
+    --color-primary-hover: #236171;
+    --color-primary-light: #C3DCE3;
+
+    --color-text: #000000;
+    --color-white: #FFFFFF;
+
+    --color-bg: #F6F5F4;
+    --bg-hover: #F0F0F0;
+    --bg-light: #F9F9F9;
+    --border-color-dark: #e0e0e0;
+
+    --title-color: #333333;
+    --color-text-light: #585858;
+    --color-placeholder: #888888;
+
+    --color-success: #2e7d32;
+    --color-success-bg: #e8f5e9;
+    --color-error: #c62828;
+    --color-error-bg: #ffebee;
+}

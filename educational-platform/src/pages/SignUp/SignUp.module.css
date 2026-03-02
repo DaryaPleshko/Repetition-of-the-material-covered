@@ -1,16 +1,4 @@
-:root {
-    --color-bg: #F6F5F4;
-    --color-primary: #2B788B;
-    --color-primary-hover: #236171;
-    --color-text: #000000;
-    --color-text-light: #585858;
-    --color-placeholder: #888888;
-    --color-input-bg: #F6F5F4;
-    --color-input-focus: #E8E8E8;
-    --color-white: #FFFFFF;
-    --color-error: #c62828;
-    --color-error-bg: #ffebee;
-}
+@import '../../styles/global.css';
 
 .signupPage {
     display: flex;
@@ -54,14 +42,14 @@
     border: none;
     border-radius: 12px;
     font-size: 16px;
-    background-color: var(--color-input-bg);
+    background-color: var(--color-bg);
     color: var(--color-text);
     transition: all 0.3s ease;
 }
 
 .signupPage .signupContainer .formGroup input:focus {
     outline: none;
-    background-color: var(--color-input-focus);
+    background-color: var(--bg-light);
 }
 
 .signupPage .signupContainer .formGroup input::placeholder {
@@ -88,6 +76,117 @@
     bottom: -20px;
 }
 
+.signupPage .signupContainer .formGroup .courseLabel {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+}
+
+.signupPage .signupContainer .formGroup .customSelectWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.signupPage .signupContainer .formGroup .customSelect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+    background-color: var(--color-bg);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.signupPage .signupContainer .formGroup .customSelect:hover {
+    border-color: var(--color-primary);
+    background-color: var(--bg-light);
+}
+
+.signupPage .signupContainer .formGroup .customSelect.inputError {
+    border: 2px solid var(--color-error);
+    background-color: var(--color-error-bg);
+}
+
+.signupPage .signupContainer .formGroup .customSelect.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.signupPage .signupContainer .formGroup .placeholder {
+    color: var(--color-placeholder);
+}
+
+.signupPage .signupContainer .formGroup .selectedValue {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.signupPage .signupContainer .formGroup .selectArrow {
+    font-size: 12px;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+
+.signupPage .signupContainer .formGroup .arrowUp {
+    transform: rotate(180deg);
+}
+
+.signupPage .signupContainer .formGroup .selectDropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+    border: 1px solid #eaeaea;
+}
+
+.signupPage .signupContainer .formGroup .selectOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.signupPage .signupContainer .formGroup .selectOption:last-child {
+    border-bottom: none;
+}
+
+.signupPage .signupContainer .formGroup .selectOption:hover {
+    background-color: var(--color-bg);
+}
+
+.signupPage .signupContainer .formGroup .selectOption.selectedOption {
+    background-color: rgba(43, 120, 139, 0.1);
+    color: var(--color-primary);
+}
+
+.signupPage .signupContainer .formGroup .optionName {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.signupPage .signupContainer .formGroup .checkMark {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .signupPage .signupContainer .errorMessage {
     background-color: var(--color-error-bg);
     color: var(--color-error);
@@ -97,6 +196,7 @@
     font-size: 14px;
     text-align: center;
     border: 1px solid var(--color-error);
+    animation: fadeIn 0.3s ease;
 }
 
 .signupPage .signupContainer .signupButton {
@@ -177,6 +277,16 @@
     outline-offset: 2px;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media (max-width: 992px) {
     .signupPage {
@@ -204,6 +314,21 @@
     .signupPage .signupContainer p {
         font-size: 18px;
         margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .signupPage .signupContainer .formGroup .customSelect {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+    
+    .signupPage .signupContainer .formGroup .selectOption {
+        padding: 12px 16px;
+    }
+    
+    .signupPage .signupContainer .formGroup .optionName {
+        font-size: 14px;
     }
 }
 
@@ -236,6 +361,14 @@
     .signupPage .image img {
         max-height: 300px;
     }
+    
+    .signupPage .signupContainer .formGroup .customSelect {
+        padding: 12px 16px;
+    }
+    
+    .signupPage .signupContainer .formGroup .selectOption {
+        padding: 10px 14px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -264,8 +397,4 @@
     .signupPage .signupContainer .loginLink {
         font-size: 13px;
     }
-}
-
-.signupPage .signupContainer .errorMessage {
-    animation: fadeIn 0.3s ease;
 }

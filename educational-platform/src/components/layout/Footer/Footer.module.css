@@ -1,14 +1,8 @@
-.footer {
-    --footer-bg-color: #F6F5F4;
-    --footer-text-color: #000000;
-    --footer-border-color: #e0e0e0;
-    --footer-link-color: #2B788B;
-    --footer-link-hover: #236171;
-    --footer-title-color: #333333;
-    --footer-transition: 0.3s ease;
+@import '../../../styles/global.css';
 
-    background-color: var(--footer-bg-color);
-    border-top: 1px solid var(--footer-border-color);
+.footer {
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--border-color-dark);
     padding: 40px 0 20px;
     margin-top: auto;
 }
@@ -33,7 +27,7 @@
 .footer .footer-title {
     font-size: 18px;
     font-weight: bold;
-    color: var(--footer-title-color);
+    color: var(--title-color);
     margin-bottom: 20px;
 }
 
@@ -44,15 +38,15 @@
 }
 
 .footer .footer-nav .footer-link {
-    color: var(--footer-text-color);
+    color: var(--color-text);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    transition: color var(--footer-transition);
+    transition: opacity 0.3s ease;
 }
 
 .footer .footer-nav .footer-link:hover {
-    color: var(--footer-link-color);
+    color: var(--color-primary-hover);
 }
 
 .footer .developers-list {
@@ -63,7 +57,7 @@
 
 .footer .developers-list .developer-name {
     font-size: 16px;
-    color: var(--footer-text-color);
+    color: var(--color-text);
     font-weight: 500;
 }
 
@@ -82,7 +76,7 @@
 .footer .teamList .teamMember .memberName {
     font-size: 16px;
     font-weight: 600;
-    color: #000000;
+    color: var(--color-text);
 }
 
 .footer .teamList .teamMember .memberRole {
@@ -92,7 +86,7 @@
 }
 
 .footer .footer-bottom {
-    border-top: 1px solid var(--footer-border-color);
+    border-top: 1px solid var(--border-color-dark);
     padding-top: 20px;
     text-align: center;
 }
@@ -136,7 +130,7 @@
     .footer {
         padding: 30px 0 15px;
     }
-    
+
     .footer .footer-top {
         flex-direction: column;
         gap: 30px;

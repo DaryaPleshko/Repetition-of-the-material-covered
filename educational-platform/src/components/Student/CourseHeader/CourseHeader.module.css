@@ -1,0 +1,87 @@
+@import '../../../styles/global.css';
+
+.header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    border-radius: 24px;
+    padding: 30px;
+    color: var(--color-white);
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(43, 120, 139, 0.3);;
+}
+
+.header .welcomeSection {
+    margin-bottom: 25px;
+}
+
+.header .welcomeSection h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-family: 'Dela Gothic One', sans-serif;;
+}
+
+.header .courseName {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.header .courseName strong {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-left: 8px;
+}
+
+.header .courseStats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.header .stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 16px;
+    flex: 1;
+}
+
+.header .statIcon {
+    font-size: 28px;
+}
+
+.header .stat div {
+    display: flex;
+    flex-direction: column;
+}
+
+.header .statValue {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.header .statLabel {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.header .lastActivity {
+    font-size: 14px;
+    opacity: 0.8;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .header .courseStats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header .welcomeSection h1 {
+        font-size: 24px;
+    }
+}

@@ -1,11 +1,4 @@
-.home {
-    --color-primary: #2B788B;
-    --color-primary-light: #C3DCE3;
-    --color-text: #000000;
-    --color-text-light: #585858;
-    --white: #FFFFFF;
-    --color-bg: #F6F5F4;
-}
+@import '../../styles/global.css';
 
 .home .hero {
     padding: 75px;
@@ -117,7 +110,7 @@
 .home .playfulSection,
 .home .statisticSection {
     padding: 60px 0;
-    background-color: var(--white);
+    background-color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;

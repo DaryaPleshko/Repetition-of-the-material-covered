@@ -1,11 +1,6 @@
-.header {
-    --primary-color: #2B788B;
-    --primary-dark: #236171;
-    --text-color: #000000;
-    --white: #f8f9fa;
-    --color-bg: #F6F5F4;
-    --transition: 0.3s ease;
+@import '../../../styles/global.css';
 
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,13 +13,13 @@
 .header .logo {
     font-size: 24px;
     font-weight: bold;
-    color: var(--text-color);
+    color: var(--color-text);
     text-decoration: none;
-    transition: color var(--transition);
+    transition: opacity 0.3s ease;
 }
 
 .header .logo:hover {
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 .header .authButtons {
@@ -36,26 +31,26 @@
 .header .authButtons .loginButton {
     font-size: 16px;
     font-weight: bold;
-    color: var(--text-color);
+    color: var(--color-text);
     text-decoration: none;
-    transition: color var(--transition);
+    transition: opacity 0.3s ease;
 }
 
 .header .authButtons .loginButton:hover {
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 .header .authButtons .signupButton {
     font-size: 16px;
     font-weight: 500;
-    color: var(--white);
-    background-color: var(--primary-color);
+    color: var(--color-white);
+    background-color: var(--color-primary);
     padding: 10px 24px;
     border-radius: 8px;
     text-decoration: none;
-    transition: background-color var(--transition);
+    transition: opacity 0.3s ease;
 }
 
 .header .authButtons .signupButton:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--color-primary-hover);
 }

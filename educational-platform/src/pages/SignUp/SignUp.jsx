@@ -1,5 +1,7 @@
+// src/pages/SignUp/SignUp.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { coursesData } from '../../pages/Courses/CourseDetail/data/coursesData';
 import styles from './SignUp.module.css';
 import signUpImage from '../../assets/login-signUp.svg';
 
@@ -10,11 +12,13 @@ const SignUp = () => {
         name: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        selectedCourse: ''
     });
 
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const [isCourseSelectOpen, setIsCourseSelectOpen] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -31,10 +35,25 @@ const SignUp = () => {
         }
     };
 
+    const handleCourseSelect = (courseId) => {
+        setFormData(prev => ({
+            ...prev,
+            selectedCourse: courseId
+        }));
+        setIsCourseSelectOpen(false);
+
+        if (errors.selectedCourse) {
+            setErrors(prev => ({
+                ...prev,
+                selectedCourse: ''
+            }));
+        }
+    };
+
     const validateForm = () => {
         const newErrors = {};
 
-        if (!formData.name) newErrors.name = 'Имя обязательно для заполнения';
+        if (!formData.name.trim()) newErrors.name = 'Имя обязательно для заполнения';
 
         if (!formData.email) newErrors.email = 'Email обязателен для заполнения';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Введите корректный email адрес';
@@ -44,6 +63,8 @@ const SignUp = () => {
 
         if (!formData.confirmPassword) newErrors.confirmPassword = 'Подтверждение пароля обязательно';
         else if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Пароли не совпадают';
+
+        if (!formData.selectedCourse) newErrors.selectedCourse = 'Выберите курс';
 
         return newErrors;
     };
@@ -63,10 +84,10 @@ const SignUp = () => {
             const storedUsers = localStorage.getItem('users');
             const users = storedUsers ? JSON.parse(storedUsers) : [];
 
-            const userExists = users.some(userCreate => userCreate.email === formData.email);
+            const userExists = users.some(u => u.email === formData.email);
 
             if (userExists) {
-                setErrors({general: 'Пользователь с таким email уже существует'});
+                setErrors({ general: 'Пользователь с таким email уже существует' });
                 setIsLoading(false);
                 return;
             }
@@ -75,22 +96,46 @@ const SignUp = () => {
                 name: formData.name,
                 email: formData.email,
                 password: formData.password,
+                courseId: formData.selectedCourse,
                 registeredAt: new Date().toISOString()
             };
 
             users.push(newUser);
-
             localStorage.setItem('users', JSON.stringify(users));
-            await new Promise(resolve => setTimeout(resolve, 500));
-            navigate('/userCourse');
 
+            localStorage.setItem('currentUser', JSON.stringify({
+                email: newUser.email,
+                name: newUser.name,
+                courseId: newUser.courseId
+            }));
+
+            console.log('Новый пользователь создан:', newUser, newUser.courseId);
+
+            await new Promise(resolve => setTimeout(resolve, 500));
+            navigate('/dashboard');
         } catch (error) {
             console.error('Ошибка при регистрации:', error);
-            setErrors({general: 'Произошла ошибка. Попробуйте снова.'});
+            setErrors({ general: 'Произошла ошибка. Попробуйте снова.' });
         } finally {
             setIsLoading(false);
         }
     };
+
+    const availableCourses = [
+        { id: 'javascript', name: 'JavaScript' },
+        { id: 'typescript', name: 'TypeScript' },
+        { id: 'python', name: 'Python' },
+        { id: 'java', name: 'Java' },
+        { id: 'csharp', name: 'C#' }
+    ];
+
+    React.useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (!e.target.closest(`.${styles.customSelectWrapper}`)) setIsCourseSelectOpen(false);
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     return (
         <div className={styles.signupPage}>
@@ -107,7 +152,7 @@ const SignUp = () => {
                         <input
                             type="text"
                             name="name"
-                            placeholder="Full Name"
+                            placeholder="Ваше имя"
                             value={formData.name}
                             onChange={handleChange}
                             className={errors.name ? styles.inputError : ''}
@@ -128,9 +173,38 @@ const SignUp = () => {
                     </div>
 
                     <div className={styles.formGroup}>
+                        <label className={styles.courseLabel}>Выберите курс обучения:</label>
+                        <div className={styles.customSelectWrapper}>
+                            <div className={`${styles.customSelect} ${errors.selectedCourse ? styles.inputError : ''} ${isLoading ? styles.disabled : ''}`}
+                                onClick={() => !isLoading && setIsCourseSelectOpen(!isCourseSelectOpen)} >
+                                <span className={formData.selectedCourse ? styles.selectedValue : styles.placeholder}>
+                                    {formData.selectedCourse ? availableCourses.find(c => c.id === formData.selectedCourse)?.name : 'Выберите курс'}
+                                </span>
+                                <span className={`${styles.selectArrow} ${isCourseSelectOpen ? styles.arrowUp : ''}`}>
+                                    ▼
+                                </span>
+                            </div>
+
+                            {isCourseSelectOpen && (
+                                <div className={styles.selectDropdown}>
+                                    {availableCourses.map(course => (
+                                        <div key={course.id}
+                                            className={`${styles.selectOption} ${formData.selectedCourse === course.id ? styles.selectedOption : ''}`}
+                                            onClick={() => handleCourseSelect(course.id)} >
+                                            <span className={styles.optionName}>{course.name}</span>
+                                            {formData.selectedCourse === course.id && ( <span className={styles.checkMark}>✓</span> )}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        {errors.selectedCourse && (<span className={styles.errorText}>{errors.selectedCourse}</span>)}
+                    </div>
+
+                    <div className={styles.formGroup}>
                         <input type="password"
                             name="password"
-                            placeholder="Password"
+                            placeholder="Пароль"
                             value={formData.password}
                             onChange={handleChange}
                             className={errors.password ? styles.inputError : ''}
@@ -141,12 +215,12 @@ const SignUp = () => {
                     <div className={styles.formGroup}>
                         <input type="password"
                             name="confirmPassword"
-                            placeholder="Confirm Password"
+                            placeholder="Подтвердите пароль"
                             value={formData.confirmPassword}
                             onChange={handleChange}
                             className={errors.confirmPassword ? styles.inputError : ''}
                             disabled={isLoading}
-                            autoComplete="new-password"/>
+                            autoComplete="new-password" />
                         {errors.confirmPassword && (<span className={styles.errorText}>{errors.confirmPassword}</span>)}
                     </div>
 

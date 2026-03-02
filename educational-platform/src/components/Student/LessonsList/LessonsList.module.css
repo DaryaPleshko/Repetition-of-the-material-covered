@@ -1,0 +1,261 @@
+@import '../../../styles/global.css';
+
+.lessonsList {
+    background: var(--color-white);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.lessonsList h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+.lessonsList .topicsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.lessonsList .topicCard {
+    background: var(--color-bg);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.lessonsList .topicCard:hover {
+    border-color: var(--color-primary);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(43, 120, 139, 0.15);
+}
+
+.lessonsList .topicContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+}
+
+.lessonsList .topicHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.lessonsList .checkbox {
+    position: relative;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.lessonsList .checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.lessonsList .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: var(--border-color-dark);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.lessonsList .checkbox:hover input~.checkmark {
+    background-color: #ddd;
+}
+
+.lessonsList .checkbox input:checked~.checkmark {
+    background-color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.lessonsList .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.lessonsList .checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+.lessonsList .checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--color-white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.lessonsList .topicNumber {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: rgba(43, 120, 139, 0.1);
+    padding: 4px 8px;
+    border-radius: 8px;
+    min-width: 45px;
+    text-align: center;
+}
+
+.lessonsList .topicTitle {
+    font-size: 16px;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.lessonsList .topicTitle.completed {
+    text-decoration: line-through;
+    color: var(--color-text-light);
+    opacity: 0.7;
+}
+
+.lessonsList .watchBtn {
+    padding: 8px 24px;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.lessonsList .watchBtn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.lessonsList .testsSection {
+    margin-top: 40px;
+    padding: 24px;
+    background: rgba(43, 120, 139, 0.05);
+    border-radius: 20px;
+}
+
+.lessonsList .testsSection h3 {
+    font-size: 20px;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lessonsList .testsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+}
+
+.lessonsList .testCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background:  var(--color-white);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.lessonsList .testCard:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(43, 120, 139, 0.1);
+}
+
+.lessonsList .testName {
+    font-size: 14px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.lessonsList .testBtn {
+    padding: 6px 18px;
+    background: var(--color-primary);
+    color:  var(--color-white);
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lessonsList .testBtn:hover {
+    background: var(--color-primary-hover);
+}
+
+@media (max-width: 768px) {
+    .lessonsList {
+        padding: 20px;
+    }
+
+    .lessonsList .topicContent {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .lessonsList .topicHeader {
+        width: 100%;
+    }
+
+    .lessonsList .watchBtn {
+        width: 100%;
+    }
+
+    .lessonsList .testsList {
+        grid-template-columns: 1fr;
+    }
+
+    .lessonsList .testCard {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .lessonsList .testBtn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .lessonsList .topicHeader {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .lessonsList .topicNumber {
+        order: 1;
+    }
+
+    .lessonsList .topicTitle {
+        width: 100%;
+        order: 3;
+        margin-left: 0;
+    }
+
+    .lessonsList .checkbox {
+        order: 2;
+        margin-left: auto;
+    }
+}

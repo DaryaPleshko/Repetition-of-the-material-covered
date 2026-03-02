@@ -8,6 +8,7 @@ import About from './pages/AboutPlatform/AboutPlatform';
 import Courses from './pages/Courses/Courses';
 import CourseDetail from './pages/Courses/CourseDetail/CourseDetail';
 import Statistics from './pages/Statistics/Statistics';
+import UserCourse from './pages/StudentDashboard/StudentDashboard';
 
 const EXTERNAL_LINKS = {
   '/sprint': 'https://sunny-bublanina-205a81.netlify.app/allpractice?mode=sprint',
@@ -58,7 +59,7 @@ function App() {
           <Route path="/bestStudents" element={<div>best Students</div>} />
 
           <Route path="/courses/:courseId" element={<CourseDetail />} />
-          <Route path="/userCourse" element={<div>ДОСТУПНЫЙ КУРС</div>} />
+          <Route path="/dashboard" element={<UserCourse />} />
         </Routes>
       </Layout>
     </Router>

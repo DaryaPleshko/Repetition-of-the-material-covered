@@ -1,6 +1,8 @@
+@import '../../styles/global.css';
+
 .aboutPage {
     min-height: 100vh;
-    background-color: #F6F5F4;
+    background-color: var(--color-bg);
     padding: 60px 20px;
 }
 
@@ -16,13 +18,13 @@
 
 .aboutPage .container .header h1 {
     font: 800 56px 'Dela Gothic One', sans-serif;
-    color: #000000;
+    color: var(--color-text);
     margin-bottom: 16px;
 }
 
 .aboutPage .container .header p {
     font-size: 20px;
-    color: #585858;
+    color: var(--color-text-light);
 }
 
 .aboutPage .container .section {
@@ -30,7 +32,7 @@
 }
 
 .aboutPage .container .quote {
-    background: white;
+    background: var(--color-white);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -40,7 +42,7 @@
 .aboutPage .container .quoteText {
     font-size: 18px;
     line-height: 1.6;
-    color: #333;
+    color: var(--color-text-light);
     font-style: italic;
     margin-bottom: 20px;
     position: relative;
@@ -50,7 +52,7 @@
 .aboutPage .container .quoteText::before {
     content: '"';
     font-size: 60px;
-    color: #2B788B;
+    color: var(--color-primary);
     position: absolute;
     left: -10px;
     top: -20px;
@@ -59,7 +61,7 @@
 
 .aboutPage .container .author {
     font-weight: 600;
-    color: #2B788B;
+    color: var(--color-primary);
     text-align: right;
     font-size: 16px;
 }
@@ -72,7 +74,7 @@
 }
 
 .aboutPage .container .card {
-    background: white;
+    background: var(--color-white);
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -91,18 +93,18 @@
 
 .aboutPage .container .card h3 {
     font: 600 20px 'Dela Gothic One', sans-serif;
-    color: #000000;
+    color: var(--color-text);
     margin-bottom: 15px;
 }
 
 .aboutPage .container .card p {
     font-size: 16px;
     line-height: 1.6;
-    color: #585858;
+    color: var(--color-text-light);
 }
 
 .aboutPage .container .conclusion {
-    background: white;
+    background: var(--color-white);
     padding: 40px;
     border-radius: 20px;
     margin-bottom: 40px;
@@ -111,7 +113,7 @@
 
 .aboutPage .container .conclusion h2 {
     font: 600 32px 'Dela Gothic One', sans-serif;
-    color: #000000;
+    color: var(--color-text);
     margin-bottom: 30px;
 }
 
@@ -137,13 +139,13 @@
 
 .aboutPage .container .role span:last-child {
     font-weight: 600;
-    color: #2B788B;
+    color: var(--color-primary);
 }
 
 .aboutPage .container .finalMessage {
     font-size: 18px;
     line-height: 1.6;
-    color: #333;
+    color: var(--title-color);
     max-width: 800px;
     margin: 0 auto;
     font-style: italic;
@@ -155,8 +157,8 @@
 
 .aboutPage .container .ctaButton {
     display: inline-block;
-    background-color: #2B788B;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
@@ -166,7 +168,7 @@
 }
 
 .aboutPage .container .ctaButton:hover {
-    background-color: #236171;
+    background-color: var(--color-primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(43, 120, 139, 0.2);
 }
@@ -175,7 +177,7 @@
     .aboutPage .container .header h1 {
         font-size: 48px;
     }
-    
+
     .aboutPage .container .grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
@@ -185,27 +187,27 @@
     .aboutPage {
         padding: 40px 15px;
     }
-    
+
     .aboutPage .container .header h1 {
         font-size: 36px;
     }
-    
+
     .aboutPage .container .header p {
         font-size: 18px;
     }
-    
+
     .aboutPage .container .quote {
         padding: 30px 25px;
     }
-    
+
     .aboutPage .container .quoteText {
         font-size: 16px;
     }
-    
+
     .aboutPage .container .card {
         padding: 25px;
     }
-    
+
     .aboutPage .container .roles {
         gap: 20px;
     }
@@ -215,19 +217,19 @@
     .aboutPage .container .grid {
         grid-template-columns: 1fr;
     }
-    
+
     .aboutPage .container .header h1 {
         font-size: 32px;
     }
-    
+
     .aboutPage .container .conclusion {
         padding: 30px 20px;
     }
-    
+
     .aboutPage .container .conclusion h2 {
         font-size: 24px;
     }
-    
+
     .aboutPage .container .roleIcon {
         font-size: 24px;
     }

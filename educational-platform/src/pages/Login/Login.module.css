@@ -1,16 +1,4 @@
-:root {
-    --color-bg: #F6F5F4;
-    --color-primary: #2B788B;
-    --color-primary-hover: #236171;
-    --color-text: #000000;
-    --color-text-light: #585858;
-    --color-placeholder: #888888;
-    --color-input-bg: #F6F5F4;
-    --color-input-focus: #E8E8E8;
-    --color-white: #FFFFFF;
-    --color-error: #c62828;
-    --color-error-bg: #ffebee;
-}
+@import '../../styles/global.css';
 
 .loginPage {
     display: flex;
@@ -54,14 +42,14 @@
     border: 2px solid transparent;
     border-radius: 12px;
     font-size: 16px;
-    background-color: var(--color-input-bg);
+    background-color: var(--color-bg);
     color: var(--color-text);
     transition: all 0.3s ease;
 }
 
 .loginPage .loginContainer .formGroup input:focus {
     outline: none;
-    background-color: var(--color-input-focus);
+    background-color: var(--bg-light);
     border-color: var(--color-primary);
 }
 

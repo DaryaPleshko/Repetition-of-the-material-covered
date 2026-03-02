@@ -20,17 +20,18 @@ const Login = () => {
             ...prev,
             [name]: value
         }));
-        if (errors[name] || errors.general) setErrors({});
+        if (errors[name] || errors.general) {
+            setErrors({});
+        }
     };
 
     const validateForm = () => {
         const newErrors = {};
 
         if (!formData.email) newErrors.email = 'Email обязателен для заполнения';
-        else if (!/\S+@\S+\.\S+/.test(formData.email))  newErrors.email = 'Введите корректный email адрес';
+        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Введите корректный email адрес';
 
-        if (!formData.password)   newErrors.password = 'Пароль обязателен для заполнения';
-
+        if (!formData.password) newErrors.password = 'Пароль обязателен для заполнения';
         return newErrors;
     };
 
@@ -48,24 +49,25 @@ const Login = () => {
             const storedUsers = localStorage.getItem('users');
             const users = storedUsers ? JSON.parse(storedUsers) : [];
 
-            const user = users.find(userCreate => userCreate.email === formData.email);
+            const user = users.find(u => u.email === formData.email);
 
             if (user && user.password === formData.password) {
                 localStorage.setItem('currentUser', JSON.stringify({
                     email: user.email,
-                    name: user.name
+                    name: user.name,
+                    courseId: user.courseId
                 }));
+
+                console.log('Успешный вход для пользователя:', user.email, user.courseId);
+
                 await new Promise(resolve => setTimeout(resolve, 500));
-                
-                navigate('/userCourse');
+                navigate('/dashboard');
             } else {
-                setErrors({
-                    general: 'Неверный email или пароль'
-                });
+                setErrors({ general: 'Неверный email или пароль'});
             }
         } catch (error) {
             console.error('Ошибка при входе:', error);
-            setErrors({ general: 'Произошла ошибка. Попробуйте снова.'});
+            setErrors({general: 'Произошла ошибка. Попробуйте снова.'});
         } finally {
             setIsLoading(false);
         }
@@ -78,7 +80,9 @@ const Login = () => {
                 <p>Введите учетные данные для доступа к своему аккаунту!</p>
 
                 {errors.general && (
-                    <div className={styles.errorMessage} role="alert">{errors.general}</div>
+                    <div className={styles.errorMessage} role="alert">
+                        {errors.general}
+                    </div>
                 )}
 
                 <form onSubmit={handleSubmit} noValidate>
@@ -89,27 +93,38 @@ const Login = () => {
                             value={formData.email}
                             onChange={handleChange}
                             className={errors.email ? styles.inputError : ''}
-                            disabled={isLoading}/>
-                        {errors.email && (<span className={styles.errorText}>{errors.email}</span>)}
+                            disabled={isLoading}
+                            autoComplete="email"/>
+                        {errors.email && (
+                            <span className={styles.errorText}>{errors.email}</span>
+                        )}
                     </div>
 
                     <div className={styles.formGroup}>
                         <input type="password"
                             name="password"
-                            placeholder="Password"
+                            placeholder="Пароль"
                             value={formData.password}
                             onChange={handleChange}
                             className={errors.password ? styles.inputError : ''}
-                            disabled={isLoading}/>
-                        {errors.password && (<span className={styles.errorText}>{errors.password}</span>)}
+                            disabled={isLoading}
+                            autoComplete="current-password"/>
+                        {errors.password && (
+                            <span className={styles.errorText}>{errors.password}</span>
+                        )}
                     </div>
 
-                    <button type="submit" className={styles.loginButton} disabled={isLoading}>
+                    <button type="submit"
+                        className={styles.loginButton}
+                        disabled={isLoading}>
                         {isLoading ? 'Вход...' : 'Войти'}
                     </button>
 
-                    <div className={styles.registerLink}>Ещё не с нами?
-                        <Link to="/signup" className={styles.signUp}> Присоединиться </Link>
+                    <div className={styles.registerLink}>
+                        Ещё не с нами?
+                        <Link to="/signup" className={styles.signUp}>
+                            Присоединиться
+                        </Link>
                     </div>
                 </form>
             </div>
