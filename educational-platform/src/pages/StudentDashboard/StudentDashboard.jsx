@@ -6,7 +6,7 @@ import CourseProgress from '../../components/Student/CourseProgress/CourseProgre
 import LessonsList from '../../components/Student/LessonsList/LessonsList';
 import Schedule from '../../components/Student/Schedule/Schedule';
 import Materials from '../../components/Student/Materials/Materials';
-import styles from './StudentDashboard.module.css';
+import styles from './StudentDashboard.module.scss';
 
 
 const StudentDashboard = () => {

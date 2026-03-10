@@ -1,8 +1,7 @@
-// src/pages/SignUp/SignUp.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { coursesData } from '../../pages/Courses/CourseDetail/data/coursesData';
-import styles from './SignUp.module.css';
+import styles from './SignUp.module.scss';
 import signUpImage from '../../assets/login-signUp.svg';
 
 const SignUp = () => {

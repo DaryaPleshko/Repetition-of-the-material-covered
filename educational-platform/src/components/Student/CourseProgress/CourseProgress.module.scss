@@ -1,0 +1,136 @@
+@import '../../../styles/global.scss';
+
+.progressSection {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    .progressHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        h3 {
+            font-size: 20px;
+            color: var(--color-text);
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+
+    .stats {
+        display: flex;
+        gap: 30px;
+    }
+
+    .stat {
+        text-align: center;
+
+        .statNumber {
+            display: block;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+
+        .statLabel {
+            font-size: 12px;
+            color: var(--color-text-light);
+        }
+    }
+
+    .progressBarContainer {
+        height: 16px;
+        background: #EAEAEA;
+        border-radius: 30px;
+        margin: 20px 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .progressBar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+        border-radius: 30px;
+        position: relative;
+        transition: width 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 10px;
+    }
+
+    .courseInfo {
+        display: flex;
+        gap: 40px;
+        padding: 15px;
+        background: var(--color-bg);
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+
+    .infoItem {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .infoLabel {
+            font-size: 12px;
+            color: var(--color-text-light);
+        }
+
+        .infoValue {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+
+            &.positive {
+                color: var(--color-success);
+            }
+
+            &.negative {
+                color: var(--color-error);
+            }
+        }
+    }
+
+    .congratulations {
+        background: var(--color-success-bg);
+        color: var(--color-success);
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 600;
+        margin-top: 20px;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+        .progressHeader {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .stats {
+            width: 100%;
+            justify-content: space-around;
+        }
+        
+        .courseInfo {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}

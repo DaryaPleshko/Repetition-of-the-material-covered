@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CourseProgress.module.css';
+import styles from './CourseProgress.module.scss';
 
 const CourseProgress = ({ course, progress }) => {
     const calculateTotalLessons = () => {

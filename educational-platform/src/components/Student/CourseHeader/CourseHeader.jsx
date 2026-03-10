@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CourseHeader.module.css';
+import styles from './CourseHeader.module.scss';
 
 const CourseHeader = ({ course, student, progress }) => {
     return (

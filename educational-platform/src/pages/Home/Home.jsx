@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Home.module.css';
+import styles from './Home.module.scss';
 import heroImage from '../../assets/heroSection.svg';
 import playfulImage from '../../assets/learn a language.svg';
 import knowledgeImage from '../../assets/knowledge.svg';

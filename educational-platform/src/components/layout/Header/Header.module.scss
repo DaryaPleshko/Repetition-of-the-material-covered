@@ -1,0 +1,56 @@
+@import '../../../styles/global.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 75px;
+    background-color: var(--color-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #EAEAEA;
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--color-text);
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+
+    .authButtons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        .loginButton {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+
+        .signupButton {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--color-white);
+            background-color: var(--color-primary);
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                background-color: var(--color-primary-hover);
+            }
+        }
+    }
+}

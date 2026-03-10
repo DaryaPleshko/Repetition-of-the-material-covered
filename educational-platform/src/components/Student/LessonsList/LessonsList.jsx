@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LessonsList.module.css';
+import styles from './LessonsList.module.scss';
 
 const LessonsList = ({ course, progress, onLessonComplete }) => {
     const isLessonCompleted = (lessonId) => progress.completedLessons.includes(lessonId);

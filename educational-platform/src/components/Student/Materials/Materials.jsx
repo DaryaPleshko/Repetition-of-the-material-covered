@@ -1,6 +1,5 @@
-// src/components/Student/Materials/Materials.jsx
 import React from 'react';
-import styles from './Materials.module.css';
+import styles from './Materials.module.scss';
 
 const Materials = ({ course }) => {
     const mainMaterials = [

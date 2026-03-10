@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import styles from './CourseDetail.module.css';
+import styles from './CourseDetail.module.scss';
 import { coursesData } from './data/coursesData';
 
 const CourseDetail = () => {

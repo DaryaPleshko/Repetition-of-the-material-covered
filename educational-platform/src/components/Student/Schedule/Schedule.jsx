@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import styles from './Schedule.module.css';
+import styles from './Schedule.module.scss';
 
 const Schedule = ({ course }) => {
     const [selectedMonth, setSelectedMonth] = useState(1);

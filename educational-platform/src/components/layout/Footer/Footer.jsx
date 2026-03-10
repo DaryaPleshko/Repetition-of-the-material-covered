@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 
 import footerIcon1 from '../../../assets/footer1.svg';
 import footerIcon2 from '../../../assets/footer2.svg';

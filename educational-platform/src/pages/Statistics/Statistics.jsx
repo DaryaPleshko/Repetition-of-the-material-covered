@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Statistics.module.css';
+import styles from './Statistics.module.scss';
 import { Link } from 'react-router-dom';
 
 const Statistics = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styles from './Login.module.css';
+import styles from './Login.module.scss';
 import loginImage from '../../assets/login-signUp.svg';
 
 const Login = () => {
