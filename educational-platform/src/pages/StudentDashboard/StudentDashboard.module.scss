@@ -7,6 +7,181 @@
     background-color: var(--color-bg);
     min-height: 100vh;
 
+    .afterProgressGrid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 18px;
+        margin: 0 0 26px;
+        align-items: start;
+    }
+
+    .recommendedCard,
+    .activityCard {
+        background: var(--color-white);
+        border-radius: 22px;
+        padding: 22px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .recommendedHeader,
+    .activityHeader {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .recommendedHeader h3,
+    .activityHeader h3 {
+        font-size: 18px;
+        font-weight: 900;
+        color: var(--color-text);
+        margin: 0;
+    }
+
+    .badge {
+        white-space: nowrap;
+        background: rgba(43, 120, 139, 0.12);
+        color: var(--color-primary);
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .badgeAlt {
+        white-space: nowrap;
+        background: rgba(43, 120, 139, 0.08);
+        color: var(--color-primary);
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .recommendedText {
+        color: var(--color-text-light);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0 0 18px;
+    }
+
+    .recommendedText strong {
+        color: var(--color-text);
+    }
+
+    .actionsRow {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .primaryBtn {
+        background: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        border-radius: 14px;
+        padding: 12px 16px;
+        font-weight: 900;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-1px);
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    }
+
+    .ghostBtn {
+        background: var(--color-bg);
+        color: var(--color-primary);
+        border: 1px solid rgba(43, 120, 139, 0.25);
+        border-radius: 14px;
+        padding: 12px 16px;
+        font-weight: 900;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: rgba(43, 120, 139, 0.08);
+            border-color: rgba(43, 120, 139, 0.4);
+            transform: translateY(-1px);
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    }
+
+    .activityList {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 6px;
+    }
+
+    .activityItem {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 12px;
+        border-radius: 16px;
+        background: var(--color-bg);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .activityIcon {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(43, 120, 139, 0.1);
+        color: var(--color-primary);
+        font-size: 16px;
+        flex: 0 0 auto;
+    }
+
+    .activityText {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 0;
+    }
+
+    .activityTitle {
+        font-size: 13px;
+        color: var(--color-text);
+        font-weight: 900;
+        line-height: 1.3;
+        word-break: break-word;
+    }
+
+    .activityMeta {
+        font-size: 12px;
+        color: var(--color-text-light);
+    }
+
+    .emptyActivity {
+        margin: 0;
+        color: var(--color-text-light);
+        font-size: 14px;
+        line-height: 1.7;
+        padding-top: 6px;
+    }
+
     .loading {
         display: flex;
         justify-content: center;
@@ -19,9 +194,15 @@
     .tabs {
         display: flex;
         gap: 15px;
-        margin: 30px 0;
-        border-bottom: 2px solid var(--border-color-dark);
-        padding-bottom: 10px;
+        margin: 18px 0 22px;
+        border-bottom: 1px solid var(--border-color-dark);
+        padding: 12px 0 10px;
+        position: sticky;
+        top: 90px;
+        z-index: 10;
+        background: rgba(246, 245, 244, 0.78);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
 
         .tab {
             display: flex;
