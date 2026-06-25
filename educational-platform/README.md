@@ -1,16 +1,14 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Frontend-стек: React (хуки useState, useEffect, useMemo), react-router-dom для роутинга, Vite для сборки, SCSS modules для модульных стилей, localStorage как хранилище состояния.
+Архитектура UI: компонентный подход (страницы + переиспользуемые компоненты), компоновка через Layout с Header/Footer.
+Маршрутизация и навигация: реализованы страницы Home, Login, SignUp, Courses, CourseDetail, Statistics, StudentDashboard, а также редирект на внешние страницы (через ExternalRedirect в App.jsx).
+Аутентификация (демо): регистрация и вход с валидацией полей и сохранением данных пользователя в localStorage (users + currentUser), logout — удаление currentUser.
+Личный кабинет студента: загрузка выбранного курса, обработка ошибок/кейсов “курс не выбран/курс не найден”, переключение табов (уроки/расписание/материалы).
+Прогресс обучения: сохранение отметок выполненных уроков в localStorage, подсчет прогресса и процента выполненного курса, отображение “дней осталось” и достижений/состояний.
+Уроки и UX:
+поиск по урокам и фильтр “все/невыполненные/выполненные” (LessonsList.jsx);
+модальные окна для просмотра уроков и управления выполнением (закрытие по Escape, aria-modal/role для диалогов, scrollIntoView при переходе к уроку).
+Расписание и материалы:
+группировка тем по месяцам на основе длительности курса (Schedule.jsx);
+блок учебных материалов (основные + дополнительные).
+Синхронизация состояния: в Layout отслеживаются изменения localStorage (event storage + перехват localStorage.setItem), чтобы интерфейс корректно обновлялся после действий пользователя.
