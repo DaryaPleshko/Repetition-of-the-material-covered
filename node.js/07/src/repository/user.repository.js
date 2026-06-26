@@ -9,7 +9,10 @@ class UserRepository {
                         LEFT JOIN tasks ON users.id = tasks.user_id
                         ORDER BY users.id `;
             const result = await client.query(sql);
-            return result.rows; 
+            return result.rows;
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -28,6 +31,9 @@ class UserRepository {
 
             user.tasks = tasksResult.rows;
             return user;
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -36,6 +42,8 @@ class UserRepository {
     updateUserByIdDB = async (id, name, surname, email, pwd) => {
         const client = await pool.connect();
         try {
+            await client.query('BEGIN');
+
             const sql = `UPDATE users SET name = $1, surname = $2, email = $3, pwd = $4 
                          WHERE id = $5 
                          RETURNING id, name, surname, email`;
@@ -48,7 +56,11 @@ class UserRepository {
             const tasksResult = await client.query(tasksSql, [id]);
             user.tasks = tasksResult.rows;
 
+            await client.query('COMMIT');
             return user;
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -57,6 +69,8 @@ class UserRepository {
     partialUpdateUserByIdDB = async (id, updates) => {
         const client = await pool.connect();
         try {
+            await client.query('BEGIN');
+
             const keys = Object.keys(updates);
             const values = Object.values(updates);
 
@@ -72,7 +86,12 @@ class UserRepository {
             const tasksSql = 'SELECT id, task FROM tasks WHERE user_id = $1 ORDER BY id';
             const tasksResult = await client.query(tasksSql, [id]);
             user.tasks = tasksResult.rows;
+
+            await client.query('COMMIT');
             return user;
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -81,11 +100,18 @@ class UserRepository {
     deleteUserByIdDB = async (id) => {
         const client = await pool.connect();
         try {
+            await client.query('BEGIN');
+
             const sql = 'DELETE FROM users WHERE id = $1 RETURNING id, name, surname, email';
             const result = await client.query(sql, [id]);
 
             if (!result.rows.length) throw new Error('Пользователь не найден');
+
+            await client.query('COMMIT');
             return result.rows[0];
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }

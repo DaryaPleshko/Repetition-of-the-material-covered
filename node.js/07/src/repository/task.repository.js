@@ -17,6 +17,9 @@ class TaskRepository {
             `;
             const result = await client.query(sql);
             return result.rows;
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -41,6 +44,9 @@ class TaskRepository {
                 throw new Error('Задача не найдена');
             }
             return result.rows[0];
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -49,9 +55,16 @@ class TaskRepository {
     createdTaskDB = async (task, user_id) => {
         const client = await pool.connect();
         try {
+            await client.query('BEGIN');
+
             const sql = `INSERT INTO tasks (task, user_id) VALUES ($1, $2) RETURNING *`;
             const result = await client.query(sql, [task, user_id]);
+
+            await client.query('COMMIT');
             return result.rows[0];
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -60,12 +73,17 @@ class TaskRepository {
     updateTaskByIdDB = async (id, task) => {
         const client = await pool.connect();
         try {
+            await client.query('BEGIN');
+
             const sql = `UPDATE tasks SET task = $1 WHERE id = $2 RETURNING *`;
             const result = await client.query(sql, [task, id]);
-            if (!result.rows.length) {
-                throw new Error('Задача не найдена');
-            }
+            if (!result.rows.length) throw new Error('Задача не найдена');
+
+            await client.query('COMMIT');
             return result.rows[0];
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -74,18 +92,23 @@ class TaskRepository {
     partialUpdateTaskByIdDB = async (id, updates) => {
         const client = await pool.connect();
         try {
+            await client.query('BEGIN');
+
             const keys = Object.keys(updates);
             const values = Object.values(updates);
-            
+
             const setString = keys.map((key, index) => `${key} = $${index + 1}`).join(', ');
-            
+
             const sql = `UPDATE tasks SET ${setString} WHERE id = $${keys.length + 1} RETURNING *`;
             const result = await client.query(sql, [...values, id]);
-            
-            if (!result.rows.length) {
-                throw new Error('Задача не найдена');
-            }
+
+            if (!result.rows.length) throw new Error('Задача не найдена');
+
+            await client.query('COMMIT');
             return result.rows[0];
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
@@ -94,12 +117,17 @@ class TaskRepository {
     deleteTaskByIdDB = async (id) => {
         const client = await pool.connect();
         try {
+            await client.query('BEGIN');
+
             const sql = 'DELETE FROM tasks WHERE id = $1 RETURNING *';
             const result = await client.query(sql, [id]);
-            if (!result.rows.length) {
-                throw new Error('Задача не найдена');
-            }
+            if (!result.rows.length) throw new Error('Задача не найдена');
+
+            await client.query('COMMIT');
             return result.rows[0];
+        } catch (error) {
+            await client.query('ROLLBACK');
+            throw new Error(error.message);
         } finally {
             client.release();
         }
